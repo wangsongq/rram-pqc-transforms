@@ -1,0 +1,526 @@
+{
+  "format_version": 1,
+  "kind": "ideal binary bit-plane RRAM mapping; no analog or measured-hardware model",
+  "source": {
+    "path": "../matrices/mlkem_shared_matrices.npz",
+    "sha256": "b96b6c339da9c9599319094c8171603cba2fb6a338a823790be762f40c8de233"
+  },
+  "code": {
+    "mlkem.py": {
+      "sha256": "ec5583e0aadb2f1b593f006c78419f80e9e5bfcd029b540e2e74a2028b56ef04"
+    },
+    "binary_rram.py": {
+      "sha256": "44b312c4049d262a6e78e5722a66bc895b2444435b0a7e0c1186d308bdcb9ffc"
+    },
+    "rram_binary/generate_weights.py": {
+      "sha256": "53269f0a58ddbe2d309908224443be79b3d0f76bd541995777b6f39f3b4e997e"
+    }
+  },
+  "shared_by": [
+    "ML-KEM-512",
+    "ML-KEM-768",
+    "ML-KEM-1024"
+  ],
+  "modulus": 3329,
+  "weight_bits": 12,
+  "input_bits": 12,
+  "bit_order": "LSB first; weight bit b and input slot t range from 0 through 11",
+  "orientation": "W_math[output,input]; physical_plane[b,input,output] = bit_b(W_math[output,input])",
+  "tile_order": [
+    {
+      "index": 0,
+      "input_row_offset": 0,
+      "output_column_offset": 0
+    },
+    {
+      "index": 1,
+      "input_row_offset": 0,
+      "output_column_offset": 64
+    },
+    {
+      "index": 2,
+      "input_row_offset": 64,
+      "output_column_offset": 0
+    },
+    {
+      "index": 3,
+      "input_row_offset": 64,
+      "output_column_offset": 64
+    }
+  ],
+  "inverse_scale": {
+    "value": 3303,
+    "meaning": "128^-1 mod 3329 already fused into W128_inv; not applied again"
+  },
+  "reuse": "Even and odd 128-coefficient lanes use the same stored weights in two logical evaluations.",
+  "compute": [
+    "Canonicalize 256 integer coefficients modulo 3329; split even and odd lanes.",
+    "Encode each lane as twelve uint8 input bit planes, retaining zero-valued slots.",
+    "For each lane, input bit, weight bit and tile, count binary AND matches over its 64 input rows.",
+    "Merge tile 0+2 and tile 1+3 along input rows, yielding 128 output counts in 0..128.",
+    "Cast counts to int64, shift by b+t, and digitally sum all 144 bit-pair terms.",
+    "Reduce modulo 3329 and re-interleave the even/odd lanes."
+  ],
+  "array_counts": {
+    "directions": 2,
+    "planes_per_direction": 12,
+    "tiles_per_plane": 4,
+    "total_64x64_binary_tiles": 96,
+    "total_stored_binary_cells": 393216
+  },
+  "bounds": {
+    "raw_tile_count_max": 64,
+    "merged_count_max": 128,
+    "unreduced_coefficient_accumulator_max": 1417674752
+  },
+  "timing_scope": "Input bit slots and lane evaluations are algorithmic organization; no hardware cycle count or scheduling claim.",
+  "artifacts": {
+    "mlkem_binary_weights.npz": {
+      "role": "binary physical planes, tiles and layout metadata",
+      "arrays": {
+        "bit_weights": {
+          "shape": [
+            12
+          ],
+          "dtype": "int64"
+        },
+        "tile_input_offsets": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "tile_output_offsets": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "modulus": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "ntt_physical_planes": {
+          "shape": [
+            12,
+            128,
+            128
+          ],
+          "dtype": "uint8"
+        },
+        "ntt_tiles": {
+          "shape": [
+            12,
+            4,
+            64,
+            64
+          ],
+          "dtype": "uint8"
+        },
+        "intt_physical_planes": {
+          "shape": [
+            12,
+            128,
+            128
+          ],
+          "dtype": "uint8"
+        },
+        "intt_tiles": {
+          "shape": [
+            12,
+            4,
+            64,
+            64
+          ],
+          "dtype": "uint8"
+        }
+      },
+      "sha256": "27ca1437158b558dca5460d809060bd4ef7322919cb46cbaed998a0cbccd6af4",
+      "bytes": 788544
+    },
+    "ntt_bit00.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 0,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "a580e923803ac15810012bf6be7356aab8869b86d9afb066c622d6a2f7cfba31",
+      "bytes": 32768
+    },
+    "ntt_bit01.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 1,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "516cbcc1fa2002f77ae9f77b7aa84303863f3cfe588b1efe2a8bb1350b8fa11a",
+      "bytes": 32768
+    },
+    "ntt_bit02.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 2,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "15b9c98bc09cb29035b59c91139952affaa140a27df298d84c4519c1ed620c83",
+      "bytes": 32768
+    },
+    "ntt_bit03.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 3,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "70ac8a2d4feb102a0943d4b8425f70fb290ffbc7febe6e8774042152f7c0eb50",
+      "bytes": 32768
+    },
+    "ntt_bit04.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 4,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "4b6f6ff710023fa1100ed1c9743a192ff10eec727352e42f600c76d86fa266af",
+      "bytes": 32768
+    },
+    "ntt_bit05.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 5,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "efbd0886d2f0a436f6bf766bc812a3727ef657307a7a8c6f9b3a6458c32250f0",
+      "bytes": 32768
+    },
+    "ntt_bit06.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 6,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "7ea12ea44ac02700b46ba0fa3b6e1ff73fdb42876abae94ec82c801326a754c7",
+      "bytes": 32768
+    },
+    "ntt_bit07.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 7,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "bd33246d7bb4c360395d786e7d30d7037b7672af6b1a7d9282b888fdb00f16b5",
+      "bytes": 32768
+    },
+    "ntt_bit08.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 8,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "f7d3580419080dd8d37b8c3763895c40766e45db3d5674df391b354f63db1da0",
+      "bytes": 32768
+    },
+    "ntt_bit09.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 9,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "a115923886479ebd0834b703a52a21abfd2edf5daf5862a13066eb561562e9a9",
+      "bytes": 32768
+    },
+    "ntt_bit10.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 10,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "ca6369917abbdc9a0138606c37b0dc49c628baef6b2efaaa4f7c8ff06c77014f",
+      "bytes": 32768
+    },
+    "ntt_bit11.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "ntt",
+      "weight_bit": 11,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "9fbee32c7fcd9e3d7ad9b0674f71073ed040667a5264deaef0edb00cb2db78f3",
+      "bytes": 32768
+    },
+    "intt_bit00.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 0,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "7823a1479f411fb8382b176e24998a56422ba09710adf8ebf42be771c3557f7d",
+      "bytes": 32768
+    },
+    "intt_bit01.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 1,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "6008d41655f4dc69518be4bf92c190650286f1d0d8bfc7e28252d25fe53252b9",
+      "bytes": 32768
+    },
+    "intt_bit02.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 2,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "832160e2a084a61c7c49195d74bdf67e0f0417df3dc65619d6df0503eacacde2",
+      "bytes": 32768
+    },
+    "intt_bit03.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 3,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "80f81a687c7edb2f52fcbb5e897cbcc162a481c05c32bceef4340a48d9b0f60f",
+      "bytes": 32768
+    },
+    "intt_bit04.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 4,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "d93b45f533f86a08f27b7a695930a2929c56a2e2f3ebbc0efeac32496e7f9393",
+      "bytes": 32768
+    },
+    "intt_bit05.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 5,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "4eed4e6732fe4b445e05fd65fc105fb4752e5c2f3c8557e644c518cd297a75ae",
+      "bytes": 32768
+    },
+    "intt_bit06.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 6,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "61f198b19ca0431060f053715b55569ab7f839ed0c2ef28e6428ef4818144b65",
+      "bytes": 32768
+    },
+    "intt_bit07.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 7,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "2682ab5ed7832e69567b721a40ce50ba1fb111f0c479cb544a285c8d1eaa71b9",
+      "bytes": 32768
+    },
+    "intt_bit08.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 8,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "278c0ef94a29f2a110047fc8b43399d24c0b2e99cf76e86241e571d7ec209315",
+      "bytes": 32768
+    },
+    "intt_bit09.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 9,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "95bac3af0726b2011e4c7056eb09a95114db03a219a25c5f716b227f31a96751",
+      "bytes": 32768
+    },
+    "intt_bit10.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 10,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "caa888f68354316c579eca031cea175aac1e7d8746f72493afad2568ff03f587",
+      "bytes": 32768
+    },
+    "intt_bit11.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "direction": "intt",
+      "weight_bit": 11,
+      "role": "physical plane: input rows, output columns; no header",
+      "sha256": "baf5c43e4b7908d078860bfddad0bc08f5fe7bfb90b9509b09692cb8b0f6288c",
+      "bytes": 32768
+    }
+  }
+}

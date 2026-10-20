@@ -1,0 +1,180 @@
+{
+  "status": "passed",
+  "scope": "Software arithmetic, pinned official fixtures and binary weight artifacts; no physical conductance model or cryptographic certification.",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.2"
+  },
+  "checks": [
+    {
+      "command": "python smoke_test.py",
+      "status": "passed",
+      "parameter_sets": 3,
+      "invalid_inputs_rejected": 12
+    },
+    {
+      "command": "python check_binary_weights.py",
+      "status": "passed",
+      "npz_weight_arrays": 6,
+      "npz_binary_elements_checked": 1179648,
+      "csv_files_checked": 36,
+      "csv_binary_elements_checked": 589824,
+      "all_weight_arrays_are_binary": true,
+      "conductance_values_in_weights": false,
+      "fractional_csv_negative_test_passed": true
+    },
+    {
+      "command": "python check_transform_only.py",
+      "status": "passed",
+      "official_unique_cases": 435,
+      "executions": 870,
+      "passed": 870,
+      "transform_comparisons": 54,
+      "linked_flow_checks": 6,
+      "linked_ordinary_boundary_checks": 442
+    },
+    {
+      "command": "python check_intt_montgomery.py",
+      "status": "passed",
+      "redc_scalar_checks": 21009,
+      "basis_vectors": 512,
+      "dense_edge_random_vectors": 12,
+      "invalid_inputs_rejected": 9
+    }
+  ],
+  "source_sha256": {
+    "binary_rram.py": "44b312c4049d262a6e78e5722a66bc895b2444435b0a7e0c1186d308bdcb9ffc",
+    "check_binary_weights.py": "5deaff8c80c072dcf246a9b2fa4064b471c9bb925237b8a506aff855594d8b68",
+    "check_intt_montgomery.py": "1032d50e698852de7a5b3b068aa24b14cb65a41e5e26d5ed893b518b3004ab94",
+    "check_transform_only.py": "a58d99c090dc5c2e66a31b7de6cac0016838fcd555e00ddb79ff643ff05c49c9",
+    "example.py": "b11eae1306b79cfd78df11d77aa7f30b28889649be56e6ce37c7f7ce90303410",
+    "matrices/generate_matrices.py": "669f18dffa7ccf2fdbe92bc69eae2a07add72108e145399ac2126ce3c1f5ebb6",
+    "mlkem.py": "ec5583e0aadb2f1b593f006c78419f80e9e5bfcd029b540e2e74a2028b56ef04",
+    "rram_binary/generate_weights.py": "53269f0a58ddbe2d309908224443be79b3d0f76bd541995777b6f39f3b4e997e",
+    "rram_intt_montgomery.py": "3135fba437b476b9991bc1f2630f80e05998867e4ce40e1956c217ba6c674191",
+    "rram_intt_montgomery_weights/generate_weights.py": "339d289505cf4294de3d9cfed19196af16c4a406729a5ad517ce8ace8cf6acdc",
+    "rram_transform_only.py": "471045908b3b98aafe7fde86d9f45013a8657c2c65532ee101c418722397e3f7",
+    "smoke_test.py": "9f9a84f1b293de3d183b4af2cf0774ec78f636bfae99b10b65f694673d08214f",
+    "validation.py": "eb5c1020a8a9842414676a84dc8d8a0fcf96db94fcf2abd5a248661c96f035fc"
+  },
+  "fixture_provenance_sha256": "ed49f9a754bcbd1cee1ac6ecec682638f53de5b5f86d892edf43bf3a78c7a4f6",
+  "binary_weight_arrays": [
+    {
+      "file": "rram_binary/mlkem_binary_weights.npz",
+      "array": "intt_physical_planes",
+      "shape": [
+        12,
+        128,
+        128
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "checked_elements": 196608
+    },
+    {
+      "file": "rram_binary/mlkem_binary_weights.npz",
+      "array": "intt_tiles",
+      "shape": [
+        12,
+        4,
+        64,
+        64
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "checked_elements": 196608
+    },
+    {
+      "file": "rram_binary/mlkem_binary_weights.npz",
+      "array": "ntt_physical_planes",
+      "shape": [
+        12,
+        128,
+        128
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "checked_elements": 196608
+    },
+    {
+      "file": "rram_binary/mlkem_binary_weights.npz",
+      "array": "ntt_tiles",
+      "shape": [
+        12,
+        4,
+        64,
+        64
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "checked_elements": 196608
+    },
+    {
+      "file": "rram_intt_montgomery_weights/intt_montgomery_weights.npz",
+      "array": "intt_physical_planes",
+      "shape": [
+        12,
+        128,
+        128
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "checked_elements": 196608
+    },
+    {
+      "file": "rram_intt_montgomery_weights/intt_montgomery_weights.npz",
+      "array": "intt_tiles",
+      "shape": [
+        12,
+        4,
+        64,
+        64
+      ],
+      "values": [
+        0,
+        1
+      ],
+      "checked_elements": 196608
+    }
+  ],
+  "mathematical_matrix_domain": {
+    "W128": {
+      "shape": [
+        128,
+        128
+      ],
+      "min": 1,
+      "max": 3312,
+      "representation": "ordinary integer residues modulo 3329"
+    },
+    "W128_inv": {
+      "shape": [
+        128,
+        128
+      ],
+      "min": 15,
+      "max": 3314,
+      "representation": "ordinary integer residues modulo 3329"
+    }
+  },
+  "artifact_regeneration": {
+    "command_sequence": [
+      "python matrices/generate_matrices.py",
+      "python rram_binary/generate_weights.py",
+      "python rram_intt_montgomery_weights/generate_weights.py"
+    ],
+    "verified_artifacts": 39,
+    "regeneration_byte_identical": true,
+    "note": "Closed-form generator and weight generators are unchanged from the verified initial preparation."
+  }
+}

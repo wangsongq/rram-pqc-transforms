@@ -1,0 +1,301 @@
+{
+  "format_version": 1,
+  "kind": "Exact binary RRAM Saber auxiliary NTT/INTT; INTT-only Montgomery fusion",
+  "source": {
+    "path": "matrices/source_weights.npz",
+    "sha256": "c8100dc064e6defb914e361044afc62fdb95834fc0d6902cd65a6184a0fb9bfe",
+    "source_provenance": "matrices/source_provenance.json",
+    "source_generator": "matrices/source_build_weights.py"
+  },
+  "source_supporting_files": {
+    "matrices/source_provenance.json": "078385c1ba2b62cf90b79922ecdced8a0f33d7a2906f7339083333afd5bbbcb4",
+    "matrices/source_build_weights.py": "a8179f746798ad848dd1b14b2b4df63a9d49f8ebec4d2af8985eeda425a9cd0d"
+  },
+  "code": {
+    "auxiliary_ntt.py": "c8038ff8844dc67668a67dc1b39de157dd8de87c9674deb6bf152f4cc77a8a20",
+    "generate_auxiliary_weights.py": "403725f3fd015cf980e8879da4b223ca5be27192e2da39432081766412c65ae7"
+  },
+  "branches": [
+    {
+      "modulus": 3329,
+      "bits": 12,
+      "psi": 1915,
+      "inverse64": 3277,
+      "p_dash": 2488732927,
+      "R32_mod_p": 1353,
+      "max_transform_accumulator": 708837376,
+      "accumulator_below_R32": true,
+      "accumulator_below_pR32": true
+    },
+    {
+      "modulus": 7681,
+      "bits": 13,
+      "psi": 5258,
+      "inverse64": 7561,
+      "p_dash": 1954291199,
+      "R32_mod_p": 5569,
+      "max_transform_accumulator": 3774873600,
+      "accumulator_below_R32": true,
+      "accumulator_below_pR32": true
+    }
+  ],
+  "lanes": 4,
+  "lane_length": 64,
+  "lane_layout": "polynomial[4*j+r] -> lane r position j; r=0..3",
+  "gamma": "gamma_i = psi^(2*bitrev6(i)+1) mod p",
+  "forward": "W[i,j]=gamma_i^j mod p; ordinary input and ordinary weights; sum then mod p",
+  "inverse": "V[j,i]=inverse64*gamma_i^(-j) mod p; K=(2^32*V) mod p; sum then REDC32",
+  "inverse_normalization_count": 1,
+  "normalization": "inverse64 is already in V and hence K; never multiply inverse64 after REDC32",
+  "redc32": "m=((T & (2^32-1))*p_dash)&(2^32-1); u=(T+m*p)>>32; result=u-p if u>=p else u",
+  "redc32_arithmetic": "Public reducer accepts integer arrays with 0<=T<p*2^32. Low-word multiplication uses uint64 after masking T. The numerator is <2*p*2^32<2^46. Actual transform accumulators additionally satisfy T<2^32.",
+  "physical_orientation": "plane[weight_bit,input_row,output_column] = bit(W.T) or bit(K.T)",
+  "stored_values": [
+    0,
+    1
+  ],
+  "weight_planes": {
+    "3329": {
+      "ntt": 12,
+      "intt": 12
+    },
+    "7681": {
+      "ntt": 13,
+      "intt": 13
+    }
+  },
+  "total_csv_planes": 50,
+  "plane_shape": [
+    64,
+    64
+  ],
+  "lanes_reuse_same_weights": true,
+  "input_encoding": "Canonical auxiliary residues in fixed 12 or 13 unsigned input-bit slots; zero slots are retained",
+  "binary_compute": "Pack64 rows -> binary AND/popcount -> int64 shift/add -> mod p for NTT or uint64 REDC32 for INTT",
+  "quartic_product": "64 products modulo X^4-gamma_i; sum all rank terms before each branch INTT",
+  "crt": {
+    "modulus": 25570049,
+    "canonical_formula": "r0+3329*(((r1-r0)*inverse(3329,7681)) mod7681)",
+    "center_before_target_reduction": true,
+    "target_moduli": [
+      8192,
+      1024
+    ],
+    "bound": "B=256*max(abs(center_target(left)))*sum_rows(max(abs(center8192(right)))); require 2B<3329*7681",
+    "right_support_required": [
+      -5,
+      5
+    ]
+  },
+  "artifacts": {
+    "matrices/saber_auxiliary_matrices.npz": {
+      "bytes": 202132,
+      "sha256": "072f3ef2ee6d938249f0fa6e3dcd8a96ccbc0275c353fafddded493313aa3aeb"
+    },
+    "rram_binary/saber_binary_weights.npz": {
+      "bytes": 206332,
+      "sha256": "2bb9f034f636cd6f1d872521c224e04f9f45ced340bf2e5222f8dfeaa852e540"
+    },
+    "rram_binary/ntt_3329_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "707b8b2231c0885859b10102488bed343d4ff99a7a1c6ef3cc17e25b2f93ad60"
+    },
+    "rram_binary/ntt_3329_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "96de4186fc3acfae389febf4de9b0304ade4cbd4c44b6c8caa0fc84c73a8eaca"
+    },
+    "rram_binary/ntt_3329_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "3ba2483bb4faa86be85039692265de1731f3b376e2e667393824c765dc9c0b9b"
+    },
+    "rram_binary/ntt_3329_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "9815aff50a2c1bc7e85576d103921992c59df31273a5940326822bb944b0bcc4"
+    },
+    "rram_binary/ntt_3329_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "6ca4357180c1402ad30ede7774f907a53248e01caee981c5e515a3d9e0ed1502"
+    },
+    "rram_binary/ntt_3329_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "eacfa0cba8f50f565ba148d55946374a67087cbe5f5013db5cb820a55de2a04d"
+    },
+    "rram_binary/ntt_3329_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "afffda6a3b16d384e2bc88d4b381fee7dd25d4449ab02e64dad55760acf0d82a"
+    },
+    "rram_binary/ntt_3329_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "93d37914cdb7d89a591d19c656231f0403fe793858806343fa8269e0ad924c82"
+    },
+    "rram_binary/ntt_3329_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "7c799cdb77b770f6374427835fdee1880f6c5ecd4010248d96c02f85152460d1"
+    },
+    "rram_binary/ntt_3329_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "a8b4c79c3db86138ccfc1d561dc8a94215a091ee8826ff80aa8b83e1fe68388f"
+    },
+    "rram_binary/ntt_3329_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "ff5273b87d4bc79c14320404fce011a364b69a551efadce02b92096082fe93d4"
+    },
+    "rram_binary/ntt_3329_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "b56017205d1336a0dd55bc2073b6cf360a998a6436f1a4989b315fcac33be27c"
+    },
+    "rram_binary/intt_3329_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "e7036b39c7b4ca29cbe86cb18aaa45aa77372f205380b96e95691c07318df4a9"
+    },
+    "rram_binary/intt_3329_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "e1b2d6436d534b5c359989e24301a26c4ca619b8195a84b87440aa0702950463"
+    },
+    "rram_binary/intt_3329_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "1bd4744c68d1dbd28527de963089b7827237e593abc0c853981978109369ac13"
+    },
+    "rram_binary/intt_3329_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "ff9f2bd1bc489402e0f8674b2d8f7384cf917c76260c534127beb35e5cdcd281"
+    },
+    "rram_binary/intt_3329_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "e97d0aa0960a09342057cded87e2e7b9839abd3fd43c3256c3585939fb66e14c"
+    },
+    "rram_binary/intt_3329_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "4a4876b1384c3fbbf382cc133d29c03281dae26767809d03e8881644d9e75fa9"
+    },
+    "rram_binary/intt_3329_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "c6c2fe29e866c901d4f2225de46c3285335e2cfd5a16931f5bd7538cb1914731"
+    },
+    "rram_binary/intt_3329_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "f05b601a7a11db53254aeb4bd2fd5a77cbee2fac09068cb682dcb4d0fd5bab89"
+    },
+    "rram_binary/intt_3329_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "ff775172a15a6671031334c944a1384a77eb328d40c114af2cb52e3dc11cd6db"
+    },
+    "rram_binary/intt_3329_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "570f01039cf34a5986d3295fe0f0d9d741fdc6386495821c6797c535589d1be7"
+    },
+    "rram_binary/intt_3329_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "4fc1f6825ed426d346106fd5e552ccf4ba689b25411103f7d9ff69b5521ed2b9"
+    },
+    "rram_binary/intt_3329_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "6881a8679e7b294cef41265aab77abd175098ebf757486df4de6b445e872d6c1"
+    },
+    "rram_binary/ntt_7681_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "912f653ba0e9188537c6a66b20770f7786817b4d268baad1bdde698aa324fc71"
+    },
+    "rram_binary/ntt_7681_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "5d7b7b2424efa2bafe70038a5ac68dacdd05fdb9704675e8f2651ea40bde59d9"
+    },
+    "rram_binary/ntt_7681_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "4870be56f86ecf4fc31ae0cb8b3373f1cdcf194e23ab32bfd9df2515f6920f14"
+    },
+    "rram_binary/ntt_7681_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "bca874f0d964179cdadefc51814bcffe8ef4c8f43284b0a4430ef0c55fd88226"
+    },
+    "rram_binary/ntt_7681_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "1cc5d48c581fe530637c79deee45a592ca11d4a44c2bd8f836c421dc5f5499f8"
+    },
+    "rram_binary/ntt_7681_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "ae41e0d4e684305e2a6d03b720f2ae9c2e8cc5175026323828d84be0d037b74b"
+    },
+    "rram_binary/ntt_7681_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "bf6f7f3b811e186346bbc0a61c7f483dbb15504031a23a922ee6a369ffbcc643"
+    },
+    "rram_binary/ntt_7681_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "0c7b45eefb1e40ab93644487ea5ff076907d810391a74cd3834742ed844e8904"
+    },
+    "rram_binary/ntt_7681_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "fe9e992070f166bd7f11176071c8c4730f0e407141f06a3b93a78aa380e317a4"
+    },
+    "rram_binary/ntt_7681_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "e78ba4a69b35af680e7bdedee2b72733f31bfa12e3b06cbfeb39f06edcc27885"
+    },
+    "rram_binary/ntt_7681_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "765ffe3c72d70a8616a576c56d8fed1eefe87193e6858e14ed8b16674c4af362"
+    },
+    "rram_binary/ntt_7681_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "ed7fe95710a54f4736d3aa41abed554c8fcf42f907c95d1a9d19f8455773a2ec"
+    },
+    "rram_binary/ntt_7681_bit12.csv": {
+      "bytes": 8192,
+      "sha256": "bcc60cf2fe1d05c438dd43900272f8f70c16e83cf667d471e8bf73a87e0a10fb"
+    },
+    "rram_binary/intt_7681_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "906b59b10f8422b589acdec1ef5406c4158f74b3a04435da87f1ace8b85df782"
+    },
+    "rram_binary/intt_7681_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "ed0996e31e495290a25f162785dd02c30627b169fa63f2a1a5a7d55b4b717bff"
+    },
+    "rram_binary/intt_7681_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "82f9eb4f7f4cc07b2e6419c9bbe89a4e50c1419bd3d55434bea5b02b61f8b0f6"
+    },
+    "rram_binary/intt_7681_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "0619c6051ef1d535eaf71dd99d0ddbfc80a36fa2fe6634d2a495f333c9a13dfc"
+    },
+    "rram_binary/intt_7681_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "9ac9011866dc2a4cabb111598e80d8dc2a98c49afff3eb64e42c74277075a5ff"
+    },
+    "rram_binary/intt_7681_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "97695ba8ba39c956829165ca65930469cf4d1e9bcfaad0f0db1e9fae50f25290"
+    },
+    "rram_binary/intt_7681_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "665087ca36f0ad3ec96a3ac055d3d4e214f71d30822792edb4345f0b0bc9372b"
+    },
+    "rram_binary/intt_7681_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "60b47cc850a2b3998546599e6c33320c251d1e61fc3638a61d6ff2aba28d95f5"
+    },
+    "rram_binary/intt_7681_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "d968c7b96c1cf88a4d7a355a2358e9368567ada37ed6f83e67c74677341d7f0d"
+    },
+    "rram_binary/intt_7681_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "395a5d3a05d65dd338296d5cc8f50be90ca01dc6439960e0703f2e42fb5278c5"
+    },
+    "rram_binary/intt_7681_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "4bd1bd3b0a2dfde96776d4dd7c032f28fbbda8446693d256b925790b6c30e35e"
+    },
+    "rram_binary/intt_7681_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "f70bc2cca600d53fc7648b8cec8fbd0c36dd2e597287c360d8df2bf77bec8d13"
+    },
+    "rram_binary/intt_7681_bit12.csv": {
+      "bytes": 8192,
+      "sha256": "0b507ffd4922e7ad18f923b834f1174518712c6909a115e482ae64d5fadb2757"
+    }
+  },
+  "scope": "Mathematical binary counts and exact arithmetic; no physical measurements or timing inference"
+}

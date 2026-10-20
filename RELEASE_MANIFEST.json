@@ -1,0 +1,767 @@
+{
+  "format": 1,
+  "release_date": "2026-10-20",
+  "description": "SHA-256 of release files, excluding this manifest itself.",
+  "files": {
+    ".gitignore": {
+      "bytes": 418,
+      "sha256": "356c06fc89050862a2f7671d3148c11a063d54392121c833bbf16bc2a50f4b54"
+    },
+    "LICENSE": {
+      "bytes": 1093,
+      "sha256": "045cbf47efc2d5f6cdd814f0140950516c2a17f07da9093047a27e71bcc62d22"
+    },
+    "README.md": {
+      "bytes": 6791,
+      "sha256": "1688b8bf039c197b511d79b5bba59fd38e2d8aa20ca4789bd94de1b63899dce8"
+    },
+    "README.zh-CN.md": {
+      "bytes": 4853,
+      "sha256": "4a1147616bf4bba57ab7a5553246e520d25a9d3c847c7a385c8cffa215beac98"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 3009,
+      "sha256": "4d0424a1675efa772a62a3c7e76e254b466679860ab54990656071c6cc11c6a4"
+    },
+    "docs/ALGORITHMS.md": {
+      "bytes": 3817,
+      "sha256": "9e99303aaf3f93f07c0c74d8352640e17153b0f14234943898dc9011753b72bd"
+    },
+    "docs/REPRODUCIBILITY.md": {
+      "bytes": 3908,
+      "sha256": "edcf3ed109bd3d490e4717deb4827c8d867a0c46769487b3500d7491662f6241"
+    },
+    "docs/VALIDATION.md": {
+      "bytes": 2289,
+      "sha256": "4b731ccc71ecccc5fc359d0dfdd122454ed943018b9a84f405340373b922b80f"
+    },
+    "licenses/NIST-ACVP-NOTICE.txt": {
+      "bytes": 1830,
+      "sha256": "8e6833bd6bd35dadd415147ba53a8eca4c3d31c53cb589e97abba6a4efd5b953"
+    },
+    "mlkem_full_flow/README.md": {
+      "bytes": 8037,
+      "sha256": "be81b2ad54ba227c09251a734e51d0f953d2065fa3c19a9f53018c326c116eca"
+    },
+    "mlkem_full_flow/binary_rram.py": {
+      "bytes": 15063,
+      "sha256": "44b312c4049d262a6e78e5722a66bc895b2444435b0a7e0c1186d308bdcb9ffc"
+    },
+    "mlkem_full_flow/check_binary_weights.py": {
+      "bytes": 4097,
+      "sha256": "5deaff8c80c072dcf246a9b2fa4064b471c9bb925237b8a506aff855594d8b68"
+    },
+    "mlkem_full_flow/check_intt_montgomery.py": {
+      "bytes": 16536,
+      "sha256": "1032d50e698852de7a5b3b068aa24b14cb65a41e5e26d5ed893b518b3004ab94"
+    },
+    "mlkem_full_flow/check_transform_only.py": {
+      "bytes": 9202,
+      "sha256": "a58d99c090dc5c2e66a31b7de6cac0016838fcd555e00ddb79ff643ff05c49c9"
+    },
+    "mlkem_full_flow/core_provenance.json": {
+      "bytes": 3726,
+      "sha256": "6b4b92c5e43ad65508b0f9f009a5c12ef9bbd8d489411ee46b19ce3179b6c816"
+    },
+    "mlkem_full_flow/example.py": {
+      "bytes": 1473,
+      "sha256": "b11eae1306b79cfd78df11d77aa7f30b28889649be56e6ce37c7f7ce90303410"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203/expectedResults.json": {
+      "bytes": 190940,
+      "sha256": "9089ec6ff2424da9f2782b89b2f831a329a3e28d6e5e24b802b78ff36ac61cdf"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203/internalProjection.json": {
+      "bytes": 1465634,
+      "sha256": "a556952ce869bb89c3a3196a701dad89647c193a34c86eafb61a9d710d5b810f"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203/prompt.json": {
+      "bytes": 624189,
+      "sha256": "998e22dfb12efb14ce9fdff911ca634b13612819a1806f25da69adba7e16db91"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203/registration.json": {
+      "bytes": 311,
+      "sha256": "757a5c1f79c1204fe9caaf88f3effc978f89f985cdae67450eeddc9b4fdd6975"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203-tr1/expectedResults.json": {
+      "bytes": 194889,
+      "sha256": "aa846067d30bebcfe4e839b076b1df5cdeb14332912b3e02dfe8d00c614098b4"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203-tr1/internalProjection.json": {
+      "bytes": 1767711,
+      "sha256": "5e88fbd351dc2915b2ab399f5dffd269e1cdbdd0186103ab0e90b374cf592187"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203-tr1/prompt.json": {
+      "bytes": 700234,
+      "sha256": "a25430d886a8212a21ed0d4015eb91aa30d555588465d47da04ffb45236d27fd"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-encapDecap-FIPS203-tr1/registration.json": {
+      "bytes": 365,
+      "sha256": "687a6e678406d85eacb38a7db00d6dd5bea809231b884eba481c8f79923d84ec"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-keyGen-FIPS203/expectedResults.json": {
+      "bytes": 544032,
+      "sha256": "a253d0ad91c95ebea5b409673defef0aa49d65d4ed72286399e2e798ddf073a4"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-keyGen-FIPS203/internalProjection.json": {
+      "bytes": 558841,
+      "sha256": "d7a62a2c3476957f56dd8d24f9004ea6776ccfe995ffe71a65bb9506dc9c7b1b"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-keyGen-FIPS203/prompt.json": {
+      "bytes": 16066,
+      "sha256": "3f9ce34f6c836c77958bad2729e837c3b213f44ac36c3065976e7acca6389523"
+    },
+    "mlkem_full_flow/golden_vectors/ML-KEM-keyGen-FIPS203/registration.json": {
+      "bytes": 187,
+      "sha256": "a8f94edf439d1fcb31e8e65e27426eb86ef8335b3a569b2be1cfe9f75460d271"
+    },
+    "mlkem_full_flow/golden_vectors/provenance.json": {
+      "bytes": 23045,
+      "sha256": "ed49f9a754bcbd1cee1ac6ecec682638f53de5b5f86d892edf43bf3a78c7a4f6"
+    },
+    "mlkem_full_flow/matrices/generate_matrices.py": {
+      "bytes": 3577,
+      "sha256": "669f18dffa7ccf2fdbe92bc69eae2a07add72108e145399ac2126ce3c1f5ebb6"
+    },
+    "mlkem_full_flow/matrices/mlkem_shared_matrices.npz": {
+      "bytes": 36386,
+      "sha256": "b96b6c339da9c9599319094c8171603cba2fb6a338a823790be762f40c8de233"
+    },
+    "mlkem_full_flow/matrices/provenance.json": {
+      "bytes": 781,
+      "sha256": "1a3a4978ba53d2ef6ad781a30dccda66483a499e951ab17cf4315110ebac87cc"
+    },
+    "mlkem_full_flow/mlkem.py": {
+      "bytes": 22926,
+      "sha256": "ec5583e0aadb2f1b593f006c78419f80e9e5bfcd029b540e2e74a2028b56ef04"
+    },
+    "mlkem_full_flow/release_validation.json": {
+      "bytes": 5051,
+      "sha256": "3f3b64edbe62271ee5250c6d8015013ffa4ee715c0d0408b7d19b910db032bc7"
+    },
+    "mlkem_full_flow/requirements.txt": {
+      "bytes": 62,
+      "sha256": "619d497a35e467dbf954af03d56f514af4ed9a7ade44971462ecf70a99e4652f"
+    },
+    "mlkem_full_flow/rram_binary/generate_weights.py": {
+      "bytes": 480,
+      "sha256": "53269f0a58ddbe2d309908224443be79b3d0f76bd541995777b6f39f3b4e997e"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit00.csv": {
+      "bytes": 32768,
+      "sha256": "7823a1479f411fb8382b176e24998a56422ba09710adf8ebf42be771c3557f7d"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit01.csv": {
+      "bytes": 32768,
+      "sha256": "6008d41655f4dc69518be4bf92c190650286f1d0d8bfc7e28252d25fe53252b9"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit02.csv": {
+      "bytes": 32768,
+      "sha256": "832160e2a084a61c7c49195d74bdf67e0f0417df3dc65619d6df0503eacacde2"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit03.csv": {
+      "bytes": 32768,
+      "sha256": "80f81a687c7edb2f52fcbb5e897cbcc162a481c05c32bceef4340a48d9b0f60f"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit04.csv": {
+      "bytes": 32768,
+      "sha256": "d93b45f533f86a08f27b7a695930a2929c56a2e2f3ebbc0efeac32496e7f9393"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit05.csv": {
+      "bytes": 32768,
+      "sha256": "4eed4e6732fe4b445e05fd65fc105fb4752e5c2f3c8557e644c518cd297a75ae"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit06.csv": {
+      "bytes": 32768,
+      "sha256": "61f198b19ca0431060f053715b55569ab7f839ed0c2ef28e6428ef4818144b65"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit07.csv": {
+      "bytes": 32768,
+      "sha256": "2682ab5ed7832e69567b721a40ce50ba1fb111f0c479cb544a285c8d1eaa71b9"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit08.csv": {
+      "bytes": 32768,
+      "sha256": "278c0ef94a29f2a110047fc8b43399d24c0b2e99cf76e86241e571d7ec209315"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit09.csv": {
+      "bytes": 32768,
+      "sha256": "95bac3af0726b2011e4c7056eb09a95114db03a219a25c5f716b227f31a96751"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit10.csv": {
+      "bytes": 32768,
+      "sha256": "caa888f68354316c579eca031cea175aac1e7d8746f72493afad2568ff03f587"
+    },
+    "mlkem_full_flow/rram_binary/intt_bit11.csv": {
+      "bytes": 32768,
+      "sha256": "baf5c43e4b7908d078860bfddad0bc08f5fe7bfb90b9509b09692cb8b0f6288c"
+    },
+    "mlkem_full_flow/rram_binary/mlkem_binary_weights.npz": {
+      "bytes": 788544,
+      "sha256": "27ca1437158b558dca5460d809060bd4ef7322919cb46cbaed998a0cbccd6af4"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit00.csv": {
+      "bytes": 32768,
+      "sha256": "a580e923803ac15810012bf6be7356aab8869b86d9afb066c622d6a2f7cfba31"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit01.csv": {
+      "bytes": 32768,
+      "sha256": "516cbcc1fa2002f77ae9f77b7aa84303863f3cfe588b1efe2a8bb1350b8fa11a"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit02.csv": {
+      "bytes": 32768,
+      "sha256": "15b9c98bc09cb29035b59c91139952affaa140a27df298d84c4519c1ed620c83"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit03.csv": {
+      "bytes": 32768,
+      "sha256": "70ac8a2d4feb102a0943d4b8425f70fb290ffbc7febe6e8774042152f7c0eb50"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit04.csv": {
+      "bytes": 32768,
+      "sha256": "4b6f6ff710023fa1100ed1c9743a192ff10eec727352e42f600c76d86fa266af"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit05.csv": {
+      "bytes": 32768,
+      "sha256": "efbd0886d2f0a436f6bf766bc812a3727ef657307a7a8c6f9b3a6458c32250f0"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit06.csv": {
+      "bytes": 32768,
+      "sha256": "7ea12ea44ac02700b46ba0fa3b6e1ff73fdb42876abae94ec82c801326a754c7"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit07.csv": {
+      "bytes": 32768,
+      "sha256": "bd33246d7bb4c360395d786e7d30d7037b7672af6b1a7d9282b888fdb00f16b5"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit08.csv": {
+      "bytes": 32768,
+      "sha256": "f7d3580419080dd8d37b8c3763895c40766e45db3d5674df391b354f63db1da0"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit09.csv": {
+      "bytes": 32768,
+      "sha256": "a115923886479ebd0834b703a52a21abfd2edf5daf5862a13066eb561562e9a9"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit10.csv": {
+      "bytes": 32768,
+      "sha256": "ca6369917abbdc9a0138606c37b0dc49c628baef6b2efaaa4f7c8ff06c77014f"
+    },
+    "mlkem_full_flow/rram_binary/ntt_bit11.csv": {
+      "bytes": 32768,
+      "sha256": "9fbee32c7fcd9e3d7ad9b0674f71073ed040667a5264deaef0edb00cb2db78f3"
+    },
+    "mlkem_full_flow/rram_binary/provenance.json": {
+      "bytes": 12977,
+      "sha256": "d5436e30b43e5420237e0726d5a1b8225001c367e8bc36abff594a6f23a176a5"
+    },
+    "mlkem_full_flow/rram_intt_montgomery.py": {
+      "bytes": 14051,
+      "sha256": "3135fba437b476b9991bc1f2630f80e05998867e4ce40e1956c217ba6c674191"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/generate_weights.py": {
+      "bytes": 445,
+      "sha256": "339d289505cf4294de3d9cfed19196af16c4a406729a5ad517ce8ace8cf6acdc"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit00.csv": {
+      "bytes": 32768,
+      "sha256": "dd16281fd7c443b5ea6826b80884c9a6cfd4946c57ca1f89b0796be782aca304"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit01.csv": {
+      "bytes": 32768,
+      "sha256": "a26b4d8a796b7a049dde11ebfc765ce2dd3555d098e9dbd3ca64912d3b5514bf"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit02.csv": {
+      "bytes": 32768,
+      "sha256": "386b544d74e07fcd0a540c804bb34bdb8822a47b113a4e7267c7ce718a4c098d"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit03.csv": {
+      "bytes": 32768,
+      "sha256": "97cc1b67f77e0474649c429e5cb7edd07dc4991af2fc7396cadaaf9e11aaf1e2"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit04.csv": {
+      "bytes": 32768,
+      "sha256": "d4959baf6dfdf1ef93009ef4e65dc0da97bccdba70b89cd2488ee0f59855987c"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit05.csv": {
+      "bytes": 32768,
+      "sha256": "bf4a0d1c1467a7aecf83000d86d1c68b022fd434f0f29f52054c196bffb15ef0"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit06.csv": {
+      "bytes": 32768,
+      "sha256": "c7238d2dd06bdd8697af867a35a27ab6ff8d8e6e8c26e138708c1a964ae00be2"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit07.csv": {
+      "bytes": 32768,
+      "sha256": "b508eee1bcdb91abfc873096f525752aeb0bb1727fd357304107a186a1b28398"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit08.csv": {
+      "bytes": 32768,
+      "sha256": "92326bffcbf160965ae99cf161649d0237636e729f1d07f572b073a2c36676d1"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit09.csv": {
+      "bytes": 32768,
+      "sha256": "5ac0baeb86419c16aa7211352567c2428ee8cada89c799818d70daf2cd5f4847"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit10.csv": {
+      "bytes": 32768,
+      "sha256": "27cb12a97badc134345af117af7305ab6fdc0b89a44bfee4284950b553389ffc"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_bit11.csv": {
+      "bytes": 32768,
+      "sha256": "b1d5edb0fc009732a2ab2079f4226c27846d14ddaaeb349523c1ec6fee0730d1"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/intt_montgomery_weights.npz": {
+      "bytes": 396520,
+      "sha256": "af8ab2b06cbe47c56c74a68304d18486a096e2a2c1ea601e24645ea5f9d5a1dc"
+    },
+    "mlkem_full_flow/rram_intt_montgomery_weights/provenance.json": {
+      "bytes": 8708,
+      "sha256": "67709de07cebc5ad245afa6c044a5b9c3c9686cc0e056d45ecea8ca259b99ac5"
+    },
+    "mlkem_full_flow/rram_transform_only.py": {
+      "bytes": 8568,
+      "sha256": "471045908b3b98aafe7fde86d9f45013a8657c2c65532ee101c418722397e3f7"
+    },
+    "mlkem_full_flow/smoke_test.py": {
+      "bytes": 2347,
+      "sha256": "9f9a84f1b293de3d183b4af2cf0774ec78f636bfae99b10b65f694673d08214f"
+    },
+    "mlkem_full_flow/validation.py": {
+      "bytes": 2476,
+      "sha256": "eb5c1020a8a9842414676a84dc8d8a0fcf96db94fcf2abd5a248661c96f035fc"
+    },
+    "requirements.txt": {
+      "bytes": 88,
+      "sha256": "cda7f996d811811ad9a54fb69819e723d6a19e1e8aa4721be0a61d4a986868b9"
+    },
+    "saber_full_flow/README.md": {
+      "bytes": 9352,
+      "sha256": "748a8ace06cccfa126ff81b40e94f602475a0589fe31d91a20205dc11a160728"
+    },
+    "saber_full_flow/auxiliary_ntt.py": {
+      "bytes": 23457,
+      "sha256": "c8038ff8844dc67668a67dc1b39de157dd8de87c9674deb6bf152f4cc77a8a20"
+    },
+    "saber_full_flow/check_auxiliary.py": {
+      "bytes": 22910,
+      "sha256": "48fe674005a747dff65704240391399cd7a9ca0115952eccf38a928a78fc2211"
+    },
+    "saber_full_flow/check_binary_weights.py": {
+      "bytes": 4567,
+      "sha256": "4c995478725a1e6ff45eedd095f9a3a25b3789dcbd37b9c45580c70de97fa309"
+    },
+    "saber_full_flow/check_golden.py": {
+      "bytes": 9326,
+      "sha256": "f471cd60b5ae15f127b222f4681b4bf54ab03b97dc9ffa6e83009fe2690fafb4"
+    },
+    "saber_full_flow/check_rejection.py": {
+      "bytes": 2258,
+      "sha256": "7eb9a0f72b85b420f9e0cd42c82556084f1dddbe3987f1546cb8065f07d7a40e"
+    },
+    "saber_full_flow/core_provenance.json": {
+      "bytes": 10462,
+      "sha256": "5b2a16397e4ca0bc844a472a221baf065aac7c66eecc6370968456e76339007c"
+    },
+    "saber_full_flow/example.py": {
+      "bytes": 661,
+      "sha256": "6c94c4afc2c5c1c49343763f2c47d9e3f5600bb0596fffe87ac02110fbae9c7b"
+    },
+    "saber_full_flow/generate_auxiliary_weights.py": {
+      "bytes": 547,
+      "sha256": "403725f3fd015cf980e8879da4b223ca5be27192e2da39432081766412c65ae7"
+    },
+    "saber_full_flow/golden_vectors/KAT/FireSaber/PQCkemKAT_3040.req": {
+      "bytes": 13590,
+      "sha256": "36c27b6089b8910733a01fea1136469769b3ca3c35f2b375cfcc592f2112cfaa"
+    },
+    "saber_full_flow/golden_vectors/KAT/FireSaber/PQCkemKAT_3040.rsp": {
+      "bytes": 1185203,
+      "sha256": "f1cbf649d410da9fdb32dfeb7963b2b6e91c199c3e7208ed487116aa1462978a"
+    },
+    "saber_full_flow/golden_vectors/KAT/LightSaber/PQCkemKAT_1568.req": {
+      "bytes": 13590,
+      "sha256": "36c27b6089b8910733a01fea1136469769b3ca3c35f2b375cfcc592f2112cfaa"
+    },
+    "saber_full_flow/golden_vectors/KAT/LightSaber/PQCkemKAT_1568.rsp": {
+      "bytes": 615604,
+      "sha256": "d15eabf67e7a00aa1429369d2dd3c54a091c3bc33c733a7c50963b4d3b68f347"
+    },
+    "saber_full_flow/golden_vectors/KAT/Saber/PQCkemKAT_2304.req": {
+      "bytes": 13590,
+      "sha256": "36c27b6089b8910733a01fea1136469769b3ca3c35f2b375cfcc592f2112cfaa"
+    },
+    "saber_full_flow/golden_vectors/KAT/Saber/PQCkemKAT_2304.rsp": {
+      "bytes": 897199,
+      "sha256": "4066d962d8e71dad0b389d321771dd509cd273ec266e032029995516fb351053"
+    },
+    "saber_full_flow/golden_vectors/kat_io.py": {
+      "bytes": 3309,
+      "sha256": "6caf8e85b53f28c71d9055f7480b31a1140fe6869ba92bf58c4922fc16403627"
+    },
+    "saber_full_flow/golden_vectors/official_inputs.jsonl": {
+      "bytes": 131970,
+      "sha256": "e1f621c236834196c906dff2308d306e385c91355e79470def4fa789729ebe37"
+    },
+    "saber_full_flow/golden_vectors/provenance.json": {
+      "bytes": 15545,
+      "sha256": "181e95bf6177ab5c6c8b72249b1da0b4f66cde02cb55ce0095abf9cca413077f"
+    },
+    "saber_full_flow/matrices/saber_auxiliary_matrices.npz": {
+      "bytes": 202132,
+      "sha256": "072f3ef2ee6d938249f0fa6e3dcd8a96ccbc0275c353fafddded493313aa3aeb"
+    },
+    "saber_full_flow/matrices/source_build_weights.py": {
+      "bytes": 19484,
+      "sha256": "a8179f746798ad848dd1b14b2b4df63a9d49f8ebec4d2af8985eeda425a9cd0d"
+    },
+    "saber_full_flow/matrices/source_provenance.json": {
+      "bytes": 7895,
+      "sha256": "078385c1ba2b62cf90b79922ecdced8a0f33d7a2906f7339083333afd5bbbcb4"
+    },
+    "saber_full_flow/matrices/source_weights.npz": {
+      "bytes": 604066,
+      "sha256": "c8100dc064e6defb914e361044afc62fdb95834fc0d6902cd65a6184a0fb9bfe"
+    },
+    "saber_full_flow/official_reference/LICENSE": {
+      "bytes": 1778,
+      "sha256": "93b7ee863640d894136b911207108ab250bb234ff60f3f3ee4229953b273fefe"
+    },
+    "saber_full_flow/official_reference/README.md": {
+      "bytes": 1179,
+      "sha256": "04b8f49f9537c70d0d92e01ad33b1bf89266041bca9f8012d44bf89c33e409cf"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/Makefile": {
+      "bytes": 1243,
+      "sha256": "f95b3e655f83c01c002e48771ae638866c5d740330a9b4d68cd922d9290e8dab"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/README.md": {
+      "bytes": 89,
+      "sha256": "d7bace9aec32d9f722665767b53e1d984852810c85b86c4250da6258aad79a36"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/SABER_indcpa.c": {
+      "bytes": 2616,
+      "sha256": "721c6c79d4c850a8cc82da4f8f0227a26004af50c29a11d1a95b4d3653c9a2f9"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/SABER_indcpa.h": {
+      "bytes": 506,
+      "sha256": "4b3986f7af567b82a979484e59464c99e0d72369d7bf17d170fbe84253a6058d"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/SABER_params.h": {
+      "bytes": 1361,
+      "sha256": "94b72c7b975adc52df4b6a7c541b2bea66fa993aef8b1bc7ee243b7940331310"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/api.h": {
+      "bytes": 713,
+      "sha256": "af0681b3d211321c0576749cf08f446b86a3deff13ed1ee360eff0a420f4a524"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/cbd.c": {
+      "bytes": 2669,
+      "sha256": "f3c1cdcd624dded933aa6b9b9a86f24103e62f83adac93220e6fe840ed78908f"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/cbd.h": {
+      "bytes": 582,
+      "sha256": "9f7863d70b0d3bd41774bc011bf29dbcf8d9c53ecfc95477013493ca51627c6f"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/fips202.c": {
+      "bytes": 12023,
+      "sha256": "95b7ee4d61e2b8983f1e7937c259c75f63cd921d64773b9cefab7a12a3af7ec6"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/fips202.h": {
+      "bytes": 473,
+      "sha256": "b2e9358692521a76c5532b7afc8773e481a883e090e8feecd61253fcac57a15e"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/kem.c": {
+      "bytes": 2717,
+      "sha256": "b433fce7416624fe79c25275c24d82ebc9a317c73831b5130438d1f3521e238b"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/pack_unpack.c": {
+      "bytes": 8157,
+      "sha256": "4a24abb8ed62308610a103b0f2816c8960ea3e095e941685fdddf7c4fdf8b696"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/pack_unpack.h": {
+      "bytes": 822,
+      "sha256": "864dc420065eea86ebe1d9de09962ece8ac413e57d343f63ac3459032daa664a"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/poly.c": {
+      "bytes": 1291,
+      "sha256": "b941246f4c334847c16bef2e18e14e08defc6742a762681bd5c25e57bf99f20b"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/poly.h": {
+      "bytes": 532,
+      "sha256": "a20014a17a434dbfbbc88a31baca813fce1f698e6e4678f24bf1f0d219fe57b6"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/poly_mul.c": {
+      "bytes": 7627,
+      "sha256": "e8d8d485628827dd812d3e2cb0d112b063eb085984a03760bec0bfdf03ade2ab"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/poly_mul.h": {
+      "bytes": 189,
+      "sha256": "f4480625a1a888dd8b5182661085c379543785b5acaafbad2645b67449f130c9"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/rng.c": {
+      "bytes": 5383,
+      "sha256": "69d8a5ffc4deb4d26378e7afd56157635fdd7135ee7d07b14e0086dfd4026769"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/rng.h": {
+      "bytes": 1256,
+      "sha256": "b06ab6558a66b84e1e66d2e6273ed183ddd1f47589606b7095aa635cbd86b4ca"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/test/PQCgenKAT_kem.c": {
+      "bytes": 5849,
+      "sha256": "02bcc02b1fefcde4159c2984e2392389b628d7c47721cbb9d885721c97f82ac3"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/test/cpucycles.c": {
+      "bytes": 199,
+      "sha256": "b903059c8fceb59497290c437cafd12bb681b3f235a62ab89defe1bc03be49bc"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/test/cpucycles.h": {
+      "bytes": 76,
+      "sha256": "ae01aaf71e174559d5b0664dede33b8ad32e4b9f3bb0b0c508def000d7127ec3"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/test/kem.c": {
+      "bytes": 1207,
+      "sha256": "5d62014d410ce927385de1e06c5ba6199c7bb4a62ec2e994fb734802cff8e77c"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/test/test_kex.c": {
+      "bytes": 3631,
+      "sha256": "beb1094eab522ed252f718aba4b6ea6d47b435bd03050dba7e0e080ee4e3f0c9"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/verify.c": {
+      "bytes": 925,
+      "sha256": "97550cdf8d4c8295904dca2ca7e1981ba4b3a1297ace2bf2fcb22caec2eb7eb1"
+    },
+    "saber_full_flow/official_reference/Reference_Implementation_KEM/verify.h": {
+      "bytes": 722,
+      "sha256": "74afa0c2bd1db714a46acd5dc7bddd859b2efbc99359b16c1b4cb0188abe7fae"
+    },
+    "saber_full_flow/official_reference/capture_rng.c": {
+      "bytes": 956,
+      "sha256": "f970fb69039c69bebac9db1e38b3686a10cc3b82636e1eaa0d46801483861868"
+    },
+    "saber_full_flow/official_reference/validate_reference.py": {
+      "bytes": 7819,
+      "sha256": "69ab0a3f860d4862de9dedaec8264ac75560056a3ac88626029515828d499708"
+    },
+    "saber_full_flow/release_validation.json": {
+      "bytes": 3844,
+      "sha256": "81c848b2d971c83de002dba067c26fc056d9d7a22176a31bd3cbac48459a6396"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "e7036b39c7b4ca29cbe86cb18aaa45aa77372f205380b96e95691c07318df4a9"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "e1b2d6436d534b5c359989e24301a26c4ca619b8195a84b87440aa0702950463"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "1bd4744c68d1dbd28527de963089b7827237e593abc0c853981978109369ac13"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "ff9f2bd1bc489402e0f8674b2d8f7384cf917c76260c534127beb35e5cdcd281"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "e97d0aa0960a09342057cded87e2e7b9839abd3fd43c3256c3585939fb66e14c"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "4a4876b1384c3fbbf382cc133d29c03281dae26767809d03e8881644d9e75fa9"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "c6c2fe29e866c901d4f2225de46c3285335e2cfd5a16931f5bd7538cb1914731"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "f05b601a7a11db53254aeb4bd2fd5a77cbee2fac09068cb682dcb4d0fd5bab89"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "ff775172a15a6671031334c944a1384a77eb328d40c114af2cb52e3dc11cd6db"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "570f01039cf34a5986d3295fe0f0d9d741fdc6386495821c6797c535589d1be7"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "4fc1f6825ed426d346106fd5e552ccf4ba689b25411103f7d9ff69b5521ed2b9"
+    },
+    "saber_full_flow/rram_binary/intt_3329_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "6881a8679e7b294cef41265aab77abd175098ebf757486df4de6b445e872d6c1"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "906b59b10f8422b589acdec1ef5406c4158f74b3a04435da87f1ace8b85df782"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "ed0996e31e495290a25f162785dd02c30627b169fa63f2a1a5a7d55b4b717bff"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "82f9eb4f7f4cc07b2e6419c9bbe89a4e50c1419bd3d55434bea5b02b61f8b0f6"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "0619c6051ef1d535eaf71dd99d0ddbfc80a36fa2fe6634d2a495f333c9a13dfc"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "9ac9011866dc2a4cabb111598e80d8dc2a98c49afff3eb64e42c74277075a5ff"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "97695ba8ba39c956829165ca65930469cf4d1e9bcfaad0f0db1e9fae50f25290"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "665087ca36f0ad3ec96a3ac055d3d4e214f71d30822792edb4345f0b0bc9372b"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "60b47cc850a2b3998546599e6c33320c251d1e61fc3638a61d6ff2aba28d95f5"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "d968c7b96c1cf88a4d7a355a2358e9368567ada37ed6f83e67c74677341d7f0d"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "395a5d3a05d65dd338296d5cc8f50be90ca01dc6439960e0703f2e42fb5278c5"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "4bd1bd3b0a2dfde96776d4dd7c032f28fbbda8446693d256b925790b6c30e35e"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "f70bc2cca600d53fc7648b8cec8fbd0c36dd2e597287c360d8df2bf77bec8d13"
+    },
+    "saber_full_flow/rram_binary/intt_7681_bit12.csv": {
+      "bytes": 8192,
+      "sha256": "0b507ffd4922e7ad18f923b834f1174518712c6909a115e482ae64d5fadb2757"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "707b8b2231c0885859b10102488bed343d4ff99a7a1c6ef3cc17e25b2f93ad60"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "96de4186fc3acfae389febf4de9b0304ade4cbd4c44b6c8caa0fc84c73a8eaca"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "3ba2483bb4faa86be85039692265de1731f3b376e2e667393824c765dc9c0b9b"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "9815aff50a2c1bc7e85576d103921992c59df31273a5940326822bb944b0bcc4"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "6ca4357180c1402ad30ede7774f907a53248e01caee981c5e515a3d9e0ed1502"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "eacfa0cba8f50f565ba148d55946374a67087cbe5f5013db5cb820a55de2a04d"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "afffda6a3b16d384e2bc88d4b381fee7dd25d4449ab02e64dad55760acf0d82a"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "93d37914cdb7d89a591d19c656231f0403fe793858806343fa8269e0ad924c82"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "7c799cdb77b770f6374427835fdee1880f6c5ecd4010248d96c02f85152460d1"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "a8b4c79c3db86138ccfc1d561dc8a94215a091ee8826ff80aa8b83e1fe68388f"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "ff5273b87d4bc79c14320404fce011a364b69a551efadce02b92096082fe93d4"
+    },
+    "saber_full_flow/rram_binary/ntt_3329_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "b56017205d1336a0dd55bc2073b6cf360a998a6436f1a4989b315fcac33be27c"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit00.csv": {
+      "bytes": 8192,
+      "sha256": "912f653ba0e9188537c6a66b20770f7786817b4d268baad1bdde698aa324fc71"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit01.csv": {
+      "bytes": 8192,
+      "sha256": "5d7b7b2424efa2bafe70038a5ac68dacdd05fdb9704675e8f2651ea40bde59d9"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit02.csv": {
+      "bytes": 8192,
+      "sha256": "4870be56f86ecf4fc31ae0cb8b3373f1cdcf194e23ab32bfd9df2515f6920f14"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit03.csv": {
+      "bytes": 8192,
+      "sha256": "bca874f0d964179cdadefc51814bcffe8ef4c8f43284b0a4430ef0c55fd88226"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit04.csv": {
+      "bytes": 8192,
+      "sha256": "1cc5d48c581fe530637c79deee45a592ca11d4a44c2bd8f836c421dc5f5499f8"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit05.csv": {
+      "bytes": 8192,
+      "sha256": "ae41e0d4e684305e2a6d03b720f2ae9c2e8cc5175026323828d84be0d037b74b"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit06.csv": {
+      "bytes": 8192,
+      "sha256": "bf6f7f3b811e186346bbc0a61c7f483dbb15504031a23a922ee6a369ffbcc643"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit07.csv": {
+      "bytes": 8192,
+      "sha256": "0c7b45eefb1e40ab93644487ea5ff076907d810391a74cd3834742ed844e8904"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit08.csv": {
+      "bytes": 8192,
+      "sha256": "fe9e992070f166bd7f11176071c8c4730f0e407141f06a3b93a78aa380e317a4"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit09.csv": {
+      "bytes": 8192,
+      "sha256": "e78ba4a69b35af680e7bdedee2b72733f31bfa12e3b06cbfeb39f06edcc27885"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit10.csv": {
+      "bytes": 8192,
+      "sha256": "765ffe3c72d70a8616a576c56d8fed1eefe87193e6858e14ed8b16674c4af362"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit11.csv": {
+      "bytes": 8192,
+      "sha256": "ed7fe95710a54f4736d3aa41abed554c8fcf42f907c95d1a9d19f8455773a2ec"
+    },
+    "saber_full_flow/rram_binary/ntt_7681_bit12.csv": {
+      "bytes": 8192,
+      "sha256": "bcc60cf2fe1d05c438dd43900272f8f70c16e83cf667d471e8bf73a87e0a10fb"
+    },
+    "saber_full_flow/rram_binary/provenance.json": {
+      "bytes": 11298,
+      "sha256": "34e710341eb8f1a6a05f1487198de7e9c25ebdd235596564ab012b942519989a"
+    },
+    "saber_full_flow/rram_binary/saber_binary_weights.npz": {
+      "bytes": 206332,
+      "sha256": "2bb9f034f636cd6f1d872521c224e04f9f45ced340bf2e5222f8dfeaa852e540"
+    },
+    "saber_full_flow/saber.py": {
+      "bytes": 18581,
+      "sha256": "824644e215d2058536c9f0405dd52d62fdc9c0353fb264812672b4786a8a3622"
+    },
+    "saber_full_flow/smoke_test.py": {
+      "bytes": 1652,
+      "sha256": "facee66f453ece139a182e519fe2bc1838e82ec4505e9a24d67bd8398268ddaf"
+    },
+    "scripts/verify.py": {
+      "bytes": 4959,
+      "sha256": "73cad12bc67ea916808da181490bb568759e4987e423d688282dc328ca17067c"
+    }
+  }
+}

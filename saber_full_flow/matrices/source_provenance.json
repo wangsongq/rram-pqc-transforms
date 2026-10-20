@@ -1,0 +1,213 @@
+{
+  "created_for": "Self-contained Saber auxiliary-transform reference",
+  "status": "algorithm-generated logical matrices; arithmetic checks passed",
+  "data_kind": "mathematical residues and binary weights, not measurements",
+  "not_claimed": [
+    "RRAM conductance measurements, write success, or read-noise statistics",
+    "Experimentally demonstrated latency, energy, or hardware correctness",
+    "Full Saber KEM correctness, security verification, or standard KAT conformance",
+    "Exact root/ordering match to a particular third-party implementation",
+    "All weights fit on the existing four-array chip"
+  ],
+  "sources": [
+    {
+      "title": "Saber Round 3 specification",
+      "url": "https://www.esat.kuleuven.be/cosic/pqcrypto/saber/files/saberspecround3.pdf",
+      "use": "n=256, original q=8192 and p=1024, family rank and secret support"
+    },
+    {
+      "title": "Multi-moduli NTTs for Saber on Cortex-M3 and Cortex-M4",
+      "url": "https://vincentvbh.github.io/papers/2021-995.pdf",
+      "use": "Auxiliary moduli 3329 and 7681; six-layer four-component NTT and CRT strategy"
+    }
+  ],
+  "polynomial_ring": "Z_q[X]/(X^256+1), q=8192 or p=1024 as required by the arithmetic stage",
+  "auxiliary_moduli": [
+    3329,
+    7681
+  ],
+  "crt_modulus": 25570049,
+  "matrix_shape_per_modulus_per_direction": [
+    64,
+    64
+  ],
+  "lane_count": 4,
+  "lane_rule": "input[4*j+r] is position j of lane r, r=0,1,2,3",
+  "output_layout": "output[4*i+r] is coefficient r of the component modulo X^4-gamma_i",
+  "root_choice": "First integer base >=2 whose ((p-1)/128)-th power has exact order 128",
+  "branch_parameters": [
+    {
+      "p": 3329,
+      "bits": 12,
+      "base": 3,
+      "psi": 1915,
+      "psi_order": 128,
+      "inverse64": 3277
+    },
+    {
+      "p": 7681,
+      "bits": 13,
+      "base": 13,
+      "psi": 5258,
+      "psi_order": 128,
+      "inverse64": 7561
+    }
+  ],
+  "gamma_formula": "gamma_i = psi^(2*bitrev6(i)+1) mod p",
+  "forward_formula": "W[i,j] = gamma_i^j mod p",
+  "inverse_formula": "Winv[j,i] = inverse(64,p) * gamma_i^(-j) mod p",
+  "normalization": "Already included in Winv; do not multiply inverse64 again",
+  "representation": "Canonical residues 0..p-1, ordinary domain, not Montgomery",
+  "physical_layout": "For input rows/output columns, physical weight matrix is mathematical W transpose",
+  "bitplane_layout": "bitplanes_[name]_[p][i,:,:], i=0 is LSB; each stored entry is exactly 0 or 1",
+  "heatmap_instruction": "Plot logical weights, or normalize by p-1 and label normalized logical weight; never label conductance",
+  "crt_reconstruction": "r = r0 + 3329*((r1-r0)*inverse(3329,7681) mod7681); center modulo25570049, then reduce to8192 or1024",
+  "capacity": {
+    "binary_cells_per_64x64_plane": 4096,
+    "planes_for_both_moduli_one_direction": 25,
+    "binary_cells_one_direction": 102400,
+    "planes_for_separate_forward_and_inverse_weights": 50,
+    "binary_cells_forward_and_inverse": 204800,
+    "existing_chip_64x64_arrays": 4,
+    "existing_chip_binary_cells": 16384,
+    "all_weights_resident_on_existing_chip": false,
+    "note": "Capacity above is logical mapping demand, not an implemented scheduling plan; even one direction exceeds current chip capacity."
+  },
+  "validation": {
+    "result": "PASS",
+    "rng_seed": 20261005,
+    "auxiliary_fields": {
+      "3329": {
+        "result": "PASS",
+        "both_matrix_inverse_identities": true,
+        "forward_unit_polynomials": 256,
+        "inverse_unit_polynomials": 256,
+        "random_field_product_pairs": 64,
+        "structured_field_product_pairs": 6,
+        "roundtrip_quartic_product_and_independent_butterflies": 70,
+        "binary_weight_reconstruction": "PASS"
+      },
+      "7681": {
+        "result": "PASS",
+        "both_matrix_inverse_identities": true,
+        "forward_unit_polynomials": 256,
+        "inverse_unit_polynomials": 256,
+        "random_field_product_pairs": 64,
+        "structured_field_product_pairs": 6,
+        "roundtrip_quartic_product_and_independent_butterflies": 70,
+        "binary_weight_reconstruction": "PASS"
+      }
+    },
+    "original_modulus_arithmetic": {
+      "LightSaber": {
+        "result": "PASS",
+        "rank": 2,
+        "mu": 10,
+        "epsilon_T": 3,
+        "secret_support": [
+          -5,
+          5
+        ],
+        "large_coefficients": [
+          -4096,
+          4095
+        ],
+        "whole_matrix_vector_integer_bound": 10485760,
+        "twice_bound": 20971520,
+        "crt_modulus": 25570049,
+        "maximum_observed_absolute_coefficient": 10485760,
+        "positive_and_negative_worst_case_attained": true,
+        "matrix_vector_test_cases": 22,
+        "both_matrix_orientations_tested": true,
+        "verified_output_polynomials_mod8192": 88,
+        "verified_output_polynomials_mod1024": 18,
+        "random_matrix_and_inner_product_cases_each": 16,
+        "test_kind": "exact integer and modular polynomial arithmetic; not full KEM"
+      },
+      "Saber": {
+        "result": "PASS",
+        "rank": 3,
+        "mu": 8,
+        "epsilon_T": 4,
+        "secret_support": [
+          -4,
+          4
+        ],
+        "large_coefficients": [
+          -4096,
+          4095
+        ],
+        "whole_matrix_vector_integer_bound": 12582912,
+        "twice_bound": 25165824,
+        "crt_modulus": 25570049,
+        "maximum_observed_absolute_coefficient": 12582912,
+        "positive_and_negative_worst_case_attained": true,
+        "matrix_vector_test_cases": 22,
+        "both_matrix_orientations_tested": true,
+        "verified_output_polynomials_mod8192": 132,
+        "verified_output_polynomials_mod1024": 18,
+        "random_matrix_and_inner_product_cases_each": 16,
+        "test_kind": "exact integer and modular polynomial arithmetic; not full KEM"
+      },
+      "FireSaber": {
+        "result": "PASS",
+        "rank": 4,
+        "mu": 6,
+        "epsilon_T": 6,
+        "secret_support": [
+          -3,
+          3
+        ],
+        "large_coefficients": [
+          -4096,
+          4095
+        ],
+        "whole_matrix_vector_integer_bound": 12582912,
+        "twice_bound": 25165824,
+        "crt_modulus": 25570049,
+        "maximum_observed_absolute_coefficient": 12582912,
+        "positive_and_negative_worst_case_attained": true,
+        "matrix_vector_test_cases": 22,
+        "both_matrix_orientations_tested": true,
+        "verified_output_polynomials_mod8192": 176,
+        "verified_output_polynomials_mod1024": 18,
+        "random_matrix_and_inner_product_cases_each": 16,
+        "test_kind": "exact integer and modular polynomial arithmetic; not full KEM"
+      }
+    },
+    "int64_overflow_bounds_checked": true
+  },
+  "limitations": [
+    "Uniform and CBD test samples use a seeded NumPy generator, not Saber SHAKE/GenSecret byte streams",
+    "No message encoding, rounding offsets, serialization, FO transform, KEM KATs, or hardware faults are tested",
+    "Logical forward and inverse matrices share a mathematical operator across four lanes; this does not imply four physical reads",
+    "Keep the center-lift bound valid before reducing to the original modulus; directly chaining auxiliary and original reductions is incorrect"
+  ],
+  "python": "3.12.3",
+  "numpy": "2.4.2",
+  "artifact": "source_weights.npz",
+  "artifact_sha256": "c8100dc064e6defb914e361044afc62fdb95834fc0d6902cd65a6184a0fb9bfe",
+  "generator": "source_build_weights.py",
+  "generator_sha256": "a8179f746798ad848dd1b14b2b4df63a9d49f8ebec4d2af8985eeda425a9cd0d",
+  "npz_keys": [
+    "W",
+    "W_3329",
+    "W_7681",
+    "Winv",
+    "Winv_3329",
+    "Winv_7681",
+    "bitplanes_W_3329",
+    "bitplanes_W_7681",
+    "bitplanes_Winv_3329",
+    "bitplanes_Winv_7681",
+    "gamma",
+    "inverse64",
+    "moduli",
+    "physical_W_3329",
+    "physical_W_7681",
+    "physical_Winv_3329",
+    "physical_Winv_7681",
+    "psi",
+    "root_exponents"
+  ]
+}

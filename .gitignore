@@ -1,0 +1,32 @@
+# Local environments and interpreter caches.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Reproducible run outputs and native build products.
+generated/
+build/
+results/
+transform_only_results/
+*.o
+*.so
+*.dll
+*.dylib
+*.exe
+
+# Editor / operating-system files.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.tmp
+
+# Never commit local credentials or machine-specific configuration.
+.env
+.env.*
+*.pem
+*.key

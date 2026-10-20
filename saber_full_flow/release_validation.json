@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "module": "saber_full_flow",
+  "python": "3.12.3",
+  "numpy": "2.4.2",
+  "scope": "Complete Saber KEM with binary 0/1 transform weights; no plotting or backend-comparison experiments",
+  "commands": [
+    "python3 generate_auxiliary_weights.py",
+    "python3 check_binary_weights.py",
+    "python3 check_golden.py",
+    "python3 check_auxiliary.py",
+    "python3 check_rejection.py",
+    "python3 smoke_test.py",
+    "python3 example.py"
+  ],
+  "full": {
+    "official_commit": "f7f39e4db2f3e22a21e1dd635e0601caae2b4510",
+    "official_unique_cases": 300,
+    "backends": [
+      "rram_binary"
+    ],
+    "case_backend_executions": 300,
+    "case_executions_passed": 300,
+    "byte_comparisons": 1500,
+    "byte_comparisons_passed": 1500
+  },
+  "binary_weights": {
+    "status": "passed",
+    "csv_files": 50,
+    "npz_plane_stacks": 4,
+    "planes": 50,
+    "binary_cells": 204800,
+    "stored_weight_values": [
+      0,
+      1
+    ],
+    "csv_validation": "Literal 0/1 tokens; no floating-point to integer truncation",
+    "orientation": "plane[weight_bit, input_row, output_column]"
+  },
+  "negative_binary_checks": {
+    "status": "passed",
+    "csv_mutation": "One literal 0 replaced by 0.1",
+    "csv_exit_code": 1,
+    "csv_rejected_before_integer_conversion": true,
+    "npz_mutation": "One uint8 plane value replaced by 2",
+    "npz_exit_code": 1,
+    "original_artifacts_unchanged": true
+  },
+  "independent_arithmetic_audit": "passed",
+  "implicit_rejection_checks": 9,
+  "smoke": {
+    "status": "passed",
+    "scope": "Official case 0 per family on rram_binary; not the full KAT corpus",
+    "binary_csv_files": 50,
+    "binary_npz_plane_stacks": 4,
+    "official_unique_cases": 3,
+    "case_backend_executions": 3,
+    "byte_comparisons": 15,
+    "implicit_rejection_checks": 9
+  },
+  "simple_example": "passed",
+  "source_only_regeneration": {
+    "status": "passed",
+    "byte_exact_files": 55,
+    "evidence": "Verified before pruning; source generator and transform/weight-generation code unchanged and hashes rechecked"
+  },
+  "official_c": {
+    "status": "passed",
+    "official_cases": 300,
+    "byte_comparisons": 1500,
+    "captured_rng_draws": 1200,
+    "clean_rebuild": true,
+    "fixed_input_sha256_match": true,
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "dependency_note": "Validation used extracted Ubuntu libssl-dev 3.0.13 development headers/libraries via CPPFLAGS/LDFLAGS; no ABI shim or prebuilt reference library.",
+    "evidence": "Prior clean-build audit retained; official C sources and validate_reference.py unchanged. No unnecessary rebuild during pruning."
+  },
+  "release_code_sha256": {
+    "auxiliary_ntt.py": "c8038ff8844dc67668a67dc1b39de157dd8de87c9674deb6bf152f4cc77a8a20",
+    "check_auxiliary.py": "48fe674005a747dff65704240391399cd7a9ca0115952eccf38a928a78fc2211",
+    "check_binary_weights.py": "4c995478725a1e6ff45eedd095f9a3a25b3789dcbd37b9c45580c70de97fa309",
+    "check_golden.py": "f471cd60b5ae15f127b222f4681b4bf54ab03b97dc9ffa6e83009fe2690fafb4",
+    "check_rejection.py": "7eb9a0f72b85b420f9e0cd42c82556084f1dddbe3987f1546cb8065f07d7a40e",
+    "example.py": "6c94c4afc2c5c1c49343763f2c47d9e3f5600bb0596fffe87ac02110fbae9c7b",
+    "generate_auxiliary_weights.py": "403725f3fd015cf980e8879da4b223ca5be27192e2da39432081766412c65ae7",
+    "golden_vectors/kat_io.py": "6caf8e85b53f28c71d9055f7480b31a1140fe6869ba92bf58c4922fc16403627",
+    "matrices/source_build_weights.py": "a8179f746798ad848dd1b14b2b4df63a9d49f8ebec4d2af8985eeda425a9cd0d",
+    "official_reference/validate_reference.py": "69ab0a3f860d4862de9dedaec8264ac75560056a3ac88626029515828d499708",
+    "saber.py": "824644e215d2058536c9f0405dd52d62fdc9c0353fb264812672b4786a8a3622",
+    "smoke_test.py": "facee66f453ece139a182e519fe2bc1838e82ec4505e9a24d67bd8398268ddaf"
+  }
+}

@@ -1,0 +1,2 @@
+# Core arithmetic and all official-vector checks.
+numpy>=1.24

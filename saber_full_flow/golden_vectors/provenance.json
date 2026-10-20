@@ -1,0 +1,301 @@
+{
+  "repository": "https://github.com/KULeuven-COSIC/SABER",
+  "commit": "f7f39e4db2f3e22a21e1dd635e0601caae2b4510",
+  "commit_date": "2022-02-04T11:23:51Z",
+  "variant": "Round 3, SHAKE/SHA3, centered-binomial (not 90s or uniform)",
+  "license": "Public domain / Unlicense; see official_reference/LICENSE",
+  "files": [
+    {
+      "upstream_path": "KAT/FireSaber/PQCkemKAT_3040.req",
+      "local_path": "golden_vectors/KAT/FireSaber/PQCkemKAT_3040.req",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/KAT/FireSaber/PQCkemKAT_3040.req",
+      "bytes": 13590,
+      "sha256": "36c27b6089b8910733a01fea1136469769b3ca3c35f2b375cfcc592f2112cfaa"
+    },
+    {
+      "upstream_path": "KAT/FireSaber/PQCkemKAT_3040.rsp",
+      "local_path": "golden_vectors/KAT/FireSaber/PQCkemKAT_3040.rsp",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/KAT/FireSaber/PQCkemKAT_3040.rsp",
+      "bytes": 1185203,
+      "sha256": "f1cbf649d410da9fdb32dfeb7963b2b6e91c199c3e7208ed487116aa1462978a"
+    },
+    {
+      "upstream_path": "KAT/LightSaber/PQCkemKAT_1568.req",
+      "local_path": "golden_vectors/KAT/LightSaber/PQCkemKAT_1568.req",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/KAT/LightSaber/PQCkemKAT_1568.req",
+      "bytes": 13590,
+      "sha256": "36c27b6089b8910733a01fea1136469769b3ca3c35f2b375cfcc592f2112cfaa"
+    },
+    {
+      "upstream_path": "KAT/LightSaber/PQCkemKAT_1568.rsp",
+      "local_path": "golden_vectors/KAT/LightSaber/PQCkemKAT_1568.rsp",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/KAT/LightSaber/PQCkemKAT_1568.rsp",
+      "bytes": 615604,
+      "sha256": "d15eabf67e7a00aa1429369d2dd3c54a091c3bc33c733a7c50963b4d3b68f347"
+    },
+    {
+      "upstream_path": "KAT/Saber/PQCkemKAT_2304.req",
+      "local_path": "golden_vectors/KAT/Saber/PQCkemKAT_2304.req",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/KAT/Saber/PQCkemKAT_2304.req",
+      "bytes": 13590,
+      "sha256": "36c27b6089b8910733a01fea1136469769b3ca3c35f2b375cfcc592f2112cfaa"
+    },
+    {
+      "upstream_path": "KAT/Saber/PQCkemKAT_2304.rsp",
+      "local_path": "golden_vectors/KAT/Saber/PQCkemKAT_2304.rsp",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/KAT/Saber/PQCkemKAT_2304.rsp",
+      "bytes": 897199,
+      "sha256": "4066d962d8e71dad0b389d321771dd509cd273ec266e032029995516fb351053"
+    },
+    {
+      "upstream_path": "LICENSE",
+      "local_path": "official_reference/LICENSE",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/LICENSE",
+      "bytes": 1778,
+      "sha256": "93b7ee863640d894136b911207108ab250bb234ff60f3f3ee4229953b273fefe"
+    },
+    {
+      "upstream_path": "README.md",
+      "local_path": "official_reference/README.md",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/README.md",
+      "bytes": 1179,
+      "sha256": "04b8f49f9537c70d0d92e01ad33b1bf89266041bca9f8012d44bf89c33e409cf"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/Makefile",
+      "local_path": "official_reference/Reference_Implementation_KEM/Makefile",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/Makefile",
+      "bytes": 1243,
+      "sha256": "f95b3e655f83c01c002e48771ae638866c5d740330a9b4d68cd922d9290e8dab"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/README.md",
+      "local_path": "official_reference/Reference_Implementation_KEM/README.md",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/README.md",
+      "bytes": 89,
+      "sha256": "d7bace9aec32d9f722665767b53e1d984852810c85b86c4250da6258aad79a36"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/SABER_indcpa.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/SABER_indcpa.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/SABER_indcpa.c",
+      "bytes": 2616,
+      "sha256": "721c6c79d4c850a8cc82da4f8f0227a26004af50c29a11d1a95b4d3653c9a2f9"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/SABER_indcpa.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/SABER_indcpa.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/SABER_indcpa.h",
+      "bytes": 506,
+      "sha256": "4b3986f7af567b82a979484e59464c99e0d72369d7bf17d170fbe84253a6058d"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/SABER_params.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/SABER_params.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/SABER_params.h",
+      "bytes": 1361,
+      "sha256": "94b72c7b975adc52df4b6a7c541b2bea66fa993aef8b1bc7ee243b7940331310"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/api.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/api.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/api.h",
+      "bytes": 713,
+      "sha256": "af0681b3d211321c0576749cf08f446b86a3deff13ed1ee360eff0a420f4a524"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/cbd.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/cbd.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/cbd.c",
+      "bytes": 2669,
+      "sha256": "f3c1cdcd624dded933aa6b9b9a86f24103e62f83adac93220e6fe840ed78908f"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/cbd.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/cbd.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/cbd.h",
+      "bytes": 582,
+      "sha256": "9f7863d70b0d3bd41774bc011bf29dbcf8d9c53ecfc95477013493ca51627c6f"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/fips202.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/fips202.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/fips202.c",
+      "bytes": 12023,
+      "sha256": "95b7ee4d61e2b8983f1e7937c259c75f63cd921d64773b9cefab7a12a3af7ec6"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/fips202.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/fips202.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/fips202.h",
+      "bytes": 473,
+      "sha256": "b2e9358692521a76c5532b7afc8773e481a883e090e8feecd61253fcac57a15e"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/kem.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/kem.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/kem.c",
+      "bytes": 2717,
+      "sha256": "b433fce7416624fe79c25275c24d82ebc9a317c73831b5130438d1f3521e238b"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/pack_unpack.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/pack_unpack.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/pack_unpack.c",
+      "bytes": 8157,
+      "sha256": "4a24abb8ed62308610a103b0f2816c8960ea3e095e941685fdddf7c4fdf8b696"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/pack_unpack.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/pack_unpack.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/pack_unpack.h",
+      "bytes": 822,
+      "sha256": "864dc420065eea86ebe1d9de09962ece8ac413e57d343f63ac3459032daa664a"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/poly.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/poly.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/poly.c",
+      "bytes": 1291,
+      "sha256": "b941246f4c334847c16bef2e18e14e08defc6742a762681bd5c25e57bf99f20b"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/poly.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/poly.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/poly.h",
+      "bytes": 532,
+      "sha256": "a20014a17a434dbfbbc88a31baca813fce1f698e6e4678f24bf1f0d219fe57b6"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/poly_mul.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/poly_mul.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/poly_mul.c",
+      "bytes": 7627,
+      "sha256": "e8d8d485628827dd812d3e2cb0d112b063eb085984a03760bec0bfdf03ade2ab"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/poly_mul.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/poly_mul.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/poly_mul.h",
+      "bytes": 189,
+      "sha256": "f4480625a1a888dd8b5182661085c379543785b5acaafbad2645b67449f130c9"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/rng.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/rng.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/rng.c",
+      "bytes": 5383,
+      "sha256": "69d8a5ffc4deb4d26378e7afd56157635fdd7135ee7d07b14e0086dfd4026769"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/rng.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/rng.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/rng.h",
+      "bytes": 1256,
+      "sha256": "b06ab6558a66b84e1e66d2e6273ed183ddd1f47589606b7095aa635cbd86b4ca"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/test/PQCgenKAT_kem.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/test/PQCgenKAT_kem.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/test/PQCgenKAT_kem.c",
+      "bytes": 5849,
+      "sha256": "02bcc02b1fefcde4159c2984e2392389b628d7c47721cbb9d885721c97f82ac3"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/test/cpucycles.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/test/cpucycles.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/test/cpucycles.c",
+      "bytes": 199,
+      "sha256": "b903059c8fceb59497290c437cafd12bb681b3f235a62ab89defe1bc03be49bc"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/test/cpucycles.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/test/cpucycles.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/test/cpucycles.h",
+      "bytes": 76,
+      "sha256": "ae01aaf71e174559d5b0664dede33b8ad32e4b9f3bb0b0c508def000d7127ec3"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/test/kem.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/test/kem.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/test/kem.c",
+      "bytes": 1207,
+      "sha256": "5d62014d410ce927385de1e06c5ba6199c7bb4a62ec2e994fb734802cff8e77c"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/test/test_kex.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/test/test_kex.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/test/test_kex.c",
+      "bytes": 3631,
+      "sha256": "beb1094eab522ed252f718aba4b6ea6d47b435bd03050dba7e0e080ee4e3f0c9"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/verify.c",
+      "local_path": "official_reference/Reference_Implementation_KEM/verify.c",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/verify.c",
+      "bytes": 925,
+      "sha256": "97550cdf8d4c8295904dca2ca7e1981ba4b3a1297ace2bf2fcb22caec2eb7eb1"
+    },
+    {
+      "upstream_path": "Reference_Implementation_KEM/verify.h",
+      "local_path": "official_reference/Reference_Implementation_KEM/verify.h",
+      "url": "https://raw.githubusercontent.com/KULeuven-COSIC/SABER/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/verify.h",
+      "bytes": 722,
+      "sha256": "74afa0c2bd1db714a46acd5dc7bddd859b2efbc99359b16c1b4cb0188abe7fae"
+    }
+  ],
+  "test_groups": [
+    {
+      "parameter_set": "LightSaber",
+      "cases": 100,
+      "fields": [
+        "seed",
+        "pk",
+        "sk",
+        "ct",
+        "ss"
+      ]
+    },
+    {
+      "parameter_set": "Saber",
+      "cases": 100,
+      "fields": [
+        "seed",
+        "pk",
+        "sk",
+        "ct",
+        "ss"
+      ]
+    },
+    {
+      "parameter_set": "FireSaber",
+      "cases": 100,
+      "fields": [
+        "seed",
+        "pk",
+        "sk",
+        "ct",
+        "ss"
+      ]
+    }
+  ],
+  "derived_inputs": {
+    "local_path": "golden_vectors/official_inputs.jsonl",
+    "sha256": "e1f621c236834196c906dff2308d306e385c91355e79470def4fa789729ebe37",
+    "cases": 300,
+    "fields": [
+      "parameter_set",
+      "count",
+      "seed",
+      "seed_a",
+      "seed_s",
+      "z",
+      "m"
+    ],
+    "meaning": "seed is the official 48-byte KAT seed; the other four fields are unprocessed sequential 32-byte randombytes outputs captured in official C",
+    "generator": "official_reference/validate_reference.py",
+    "validation_report": "generated/reference/reference_validation.json",
+    "expected_outputs": "Read independently from pinned official KAT .rsp files; absent from this derived file"
+  },
+  "license_note": "Upstream root LICENSE is Unlicense/public-domain; retain all original per-file notices, including the NIST RNG and KAT generator copyright headers."
+}

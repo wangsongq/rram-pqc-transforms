@@ -1,0 +1,2 @@
+# Core computation and offline verification for both algorithm families.
+numpy>=1.24,<3

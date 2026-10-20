@@ -1,0 +1,349 @@
+{
+  "format_version": 1,
+  "kind": "INTT-only ideal binary RRAM weights with fused REDC32 compensation",
+  "source": {
+    "path": "../matrices/mlkem_shared_matrices.npz",
+    "key": "W128_inv",
+    "sha256": "b96b6c339da9c9599319094c8171603cba2fb6a338a823790be762f40c8de233"
+  },
+  "code": {
+    "rram_intt_montgomery.py": {
+      "sha256": "3135fba437b476b9991bc1f2630f80e05998867e4ce40e1956c217ba6c674191"
+    },
+    "rram_transform_only.py": {
+      "sha256": "471045908b3b98aafe7fde86d9f45013a8657c2c65532ee101c418722397e3f7"
+    },
+    "binary_rram.py": {
+      "sha256": "44b312c4049d262a6e78e5722a66bc895b2444435b0a7e0c1186d308bdcb9ffc"
+    },
+    "rram_intt_montgomery_weights/generate_weights.py": {
+      "sha256": "339d289505cf4294de3d9cfed19196af16c4a406729a5ad517ce8ace8cf6acdc"
+    }
+  },
+  "formula": "K = (2^32 * V) mod 3329, V = 3303*U mod 3329; physical_plane[b,in,out]=bit_b(K[out,in])",
+  "normalization": "V already contains 128^-1 mod3329=3303. Exactly one normalization is present; no extra scale after REDC32.",
+  "domain_contract": {
+    "input": "ordinary canonical residues 0..3328",
+    "stored_weight": "R*V mod q, canonical unsigned12",
+    "dot": "unreduced nonnegative integer sum of K*x",
+    "output": "ordinary canonical residues REDC32(dot)"
+  },
+  "modulus": 3329,
+  "radix_bits": 32,
+  "radix": 4294967296,
+  "radix_mod_q": 1353,
+  "qprime": 2488732927,
+  "weight_bits": 12,
+  "input_bits": 12,
+  "pulse_levels": [
+    0,
+    1
+  ],
+  "bit_order": "LSB first",
+  "tile_order": [
+    {
+      "index": 0,
+      "input_row_offset": 0,
+      "output_column_offset": 0
+    },
+    {
+      "index": 1,
+      "input_row_offset": 0,
+      "output_column_offset": 64
+    },
+    {
+      "index": 2,
+      "input_row_offset": 64,
+      "output_column_offset": 0
+    },
+    {
+      "index": 3,
+      "input_row_offset": 64,
+      "output_column_offset": 64
+    }
+  ],
+  "shared_by": [
+    "ML-KEM-512",
+    "ML-KEM-768",
+    "ML-KEM-1024"
+  ],
+  "unchanged": "All forward NTT weights and paths, SampleNTT, quadratic products, noise/compression and FO remain ordinary-domain baseline algorithms.",
+  "redc32": [
+    "Require 0 <= T < q*R.",
+    "m = (((T & (R-1))*qprime) & (R-1)) using uint64.",
+    "u = (T + m*q) >> 32.",
+    "Return u-q if u>=q, otherwise u."
+  ],
+  "bounds": {
+    "full_dot_max": 1417674752,
+    "q_times_R": 14297946128384,
+    "lowword_times_qprime_max": 10689026527454622465,
+    "redc_numerator_strict_upper": 28595892256768,
+    "raw_tile_count_max": 64,
+    "merged_count_max": 128
+  },
+  "array_counts": {
+    "planes": 12,
+    "tiles_per_plane": 4,
+    "total_64x64_tiles": 48,
+    "stored_binary_cells": 196608
+  },
+  "compute": "Binary AND/popcount per 64-row tile, merge input-row tiles, signed-safe int64 shift/add, REDC32, interleave lanes. No dense VMM shortcut.",
+  "scope": "Exact logical model; radix factor stored in weights does not establish a hardware speedup or validation claim.",
+  "artifacts": {
+    "intt_montgomery_weights.npz": {
+      "role": "INTT-only fused binary planes, tiles and metadata",
+      "arrays": {
+        "intt_physical_planes": {
+          "shape": [
+            12,
+            128,
+            128
+          ],
+          "dtype": "uint8"
+        },
+        "intt_tiles": {
+          "shape": [
+            12,
+            4,
+            64,
+            64
+          ],
+          "dtype": "uint8"
+        },
+        "bit_weights": {
+          "shape": [
+            12
+          ],
+          "dtype": "int64"
+        },
+        "tile_input_offsets": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "tile_output_offsets": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64"
+        },
+        "modulus": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "weight_bits": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "input_bits": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "radix_bits": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "radix": {
+          "shape": [],
+          "dtype": "uint64"
+        },
+        "radix_mod_q": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "qprime": {
+          "shape": [],
+          "dtype": "uint64"
+        },
+        "inverse_scale": {
+          "shape": [],
+          "dtype": "int64"
+        }
+      },
+      "sha256": "af8ab2b06cbe47c56c74a68304d18486a096e2a2c1ea601e24645ea5f9d5a1dc",
+      "bytes": 396520
+    },
+    "intt_bit00.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 0,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "dd16281fd7c443b5ea6826b80884c9a6cfd4946c57ca1f89b0796be782aca304",
+      "bytes": 32768
+    },
+    "intt_bit01.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 1,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "a26b4d8a796b7a049dde11ebfc765ce2dd3555d098e9dbd3ca64912d3b5514bf",
+      "bytes": 32768
+    },
+    "intt_bit02.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 2,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "386b544d74e07fcd0a540c804bb34bdb8822a47b113a4e7267c7ce718a4c098d",
+      "bytes": 32768
+    },
+    "intt_bit03.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 3,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "97cc1b67f77e0474649c429e5cb7edd07dc4991af2fc7396cadaaf9e11aaf1e2",
+      "bytes": 32768
+    },
+    "intt_bit04.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 4,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "d4959baf6dfdf1ef93009ef4e65dc0da97bccdba70b89cd2488ee0f59855987c",
+      "bytes": 32768
+    },
+    "intt_bit05.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 5,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "bf4a0d1c1467a7aecf83000d86d1c68b022fd434f0f29f52054c196bffb15ef0",
+      "bytes": 32768
+    },
+    "intt_bit06.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 6,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "c7238d2dd06bdd8697af867a35a27ab6ff8d8e6e8c26e138708c1a964ae00be2",
+      "bytes": 32768
+    },
+    "intt_bit07.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 7,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "b508eee1bcdb91abfc873096f525752aeb0bb1727fd357304107a186a1b28398",
+      "bytes": 32768
+    },
+    "intt_bit08.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 8,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "92326bffcbf160965ae99cf161649d0237636e729f1d07f572b073a2c36676d1",
+      "bytes": 32768
+    },
+    "intt_bit09.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 9,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "5ac0baeb86419c16aa7211352567c2428ee8cada89c799818d70daf2cd5f4847",
+      "bytes": 32768
+    },
+    "intt_bit10.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 10,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "27cb12a97badc134345af117af7305ab6fdc0b89a44bfee4284950b553389ffc",
+      "bytes": 32768
+    },
+    "intt_bit11.csv": {
+      "shape": [
+        128,
+        128
+      ],
+      "dtype": "uint8",
+      "values": [
+        0,
+        1
+      ],
+      "weight_bit": 11,
+      "role": "physical input rows, output columns; no header",
+      "sha256": "b1d5edb0fc009732a2ab2079f4226c27846d14ddaaeb349523c1ec6fee0730d1",
+      "bytes": 32768
+    }
+  }
+}

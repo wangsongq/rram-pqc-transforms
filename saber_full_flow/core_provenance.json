@@ -1,0 +1,185 @@
+{
+  "implementation": {
+    "file": "saber.py",
+    "sha256": "824644e215d2058536c9f0405dd52d62fdc9c0353fb264812672b4786a8a3622",
+    "kind": "Readable Round-3 SHAKE/SHA3 Saber-family KEM; ordinary ring arithmetic and backend-independent high-level logic",
+    "variant": "Centered-binomial Saber; not 90s, not uniform",
+    "parameter_sets": {
+      "LightSaber": {
+        "k": 2,
+        "mu": 10,
+        "et": 3,
+        "q": 8192,
+        "p": 1024,
+        "n": 256,
+        "h1": 4,
+        "h2": 196,
+        "ek_bytes": 672,
+        "dk_bytes": 1568,
+        "ciphertext_bytes": 736
+      },
+      "Saber": {
+        "k": 3,
+        "mu": 8,
+        "et": 4,
+        "q": 8192,
+        "p": 1024,
+        "n": 256,
+        "h1": 4,
+        "h2": 228,
+        "ek_bytes": 992,
+        "dk_bytes": 2304,
+        "ciphertext_bytes": 1088
+      },
+      "FireSaber": {
+        "k": 4,
+        "mu": 6,
+        "et": 6,
+        "q": 8192,
+        "p": 1024,
+        "n": 256,
+        "h1": 4,
+        "h2": 252,
+        "ek_bytes": 1312,
+        "dk_bytes": 3040,
+        "ciphertext_bytes": 1472
+      }
+    },
+    "security_scope": "Research reference with secret-bearing trace; no constant-time, validated module, analog hardware, or measured-performance claim."
+  },
+  "source": {
+    "repository": "https://github.com/KULeuven-COSIC/SABER",
+    "commit": "f7f39e4db2f3e22a21e1dd635e0601caae2b4510",
+    "commit_date": "2022-02-04",
+    "license": "Public domain / Unlicense; see official_reference/LICENSE",
+    "algorithm_sources": [
+      {
+        "path": "official_reference/Reference_Implementation_KEM/SABER_params.h",
+        "sha256": "94b72c7b975adc52df4b6a7c541b2bea66fa993aef8b1bc7ee243b7940331310",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/SABER_params.h"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/SABER_indcpa.c",
+        "sha256": "721c6c79d4c850a8cc82da4f8f0227a26004af50c29a11d1a95b4d3653c9a2f9",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/SABER_indcpa.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/kem.c",
+        "sha256": "b433fce7416624fe79c25275c24d82ebc9a317c73831b5130438d1f3521e238b",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/kem.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/poly.c",
+        "sha256": "b941246f4c334847c16bef2e18e14e08defc6742a762681bd5c25e57bf99f20b",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/poly.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/poly_mul.c",
+        "sha256": "e8d8d485628827dd812d3e2cb0d112b063eb085984a03760bec0bfdf03ade2ab",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/poly_mul.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/cbd.c",
+        "sha256": "f3c1cdcd624dded933aa6b9b9a86f24103e62f83adac93220e6fe840ed78908f",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/cbd.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/pack_unpack.c",
+        "sha256": "4a24abb8ed62308610a103b0f2816c8960ea3e095e941685fdddf7c4fdf8b696",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/pack_unpack.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/fips202.c",
+        "sha256": "95b7ee4d61e2b8983f1e7937c259c75f63cd921d64773b9cefab7a12a3af7ec6",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/fips202.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/rng.c",
+        "sha256": "69d8a5ffc4deb4d26378e7afd56157635fdd7135ee7d07b14e0086dfd4026769",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/rng.c"
+      },
+      {
+        "path": "official_reference/Reference_Implementation_KEM/verify.c",
+        "sha256": "97550cdf8d4c8295904dca2ca7e1981ba4b3a1297ace2bf2fcb22caec2eb7eb1",
+        "url": "https://github.com/KULeuven-COSIC/SABER/blob/f7f39e4db2f3e22a21e1dd635e0601caae2b4510/Reference_Implementation_KEM/verify.c"
+      }
+    ]
+  },
+  "api": {
+    "constructor": "Saber(name=\"Saber\",backend=\"schoolbook\"|\"matrix\"|\"rram_binary\",trace=None)",
+    "keygen": "keygen(seed_a,seed_s,z)->(ek,dk); each input is a raw 32-byte randomness draw",
+    "encaps": "encaps(ek,m)->(K,c); m is the raw 32-byte randomness draw before the official SHA3-256 preprocessing",
+    "decaps": "decaps(dk,c)->K; byte type/length checks at entry, ordinary Saber valid small-secret decapsulation key required",
+    "optional_randomness": "Omitted keygen/encaps random inputs use secrets.token_bytes(32), without a validation claim for the platform RNG",
+    "pke_decrypt": "pke_decrypt(dk_pke,c)->message recovers SHA3-256(m_raw) for valid encapsulations",
+    "parameters": "PARAMS maps LightSaber/Saber/FireSaber to frozen dataclasses with k,mu,et,eta,h1,h2,ek_len,dk_pke_len,dk_len,ct_len",
+    "counts": "counts {poly_dot,polynomial_products}; phase_counts keyed keygen/encaps/decaps/other; reset_counts also resets auxiliary engine counters",
+    "engine": "self.engine is auxiliary_ntt.SaberPolynomialEngine for matrix/rram_binary, None for schoolbook"
+  },
+  "byte_exact_rules": [
+    "KeyGen draws seed_Araw then seed_s; seed_A=SHAKE128(seed_Araw,32). The seed stored at the end of ek is seed_A, not raw seed_A.",
+    "GenMatrix SHAKE128 expands k*k*416 bytes and decodes 13-bit coefficients in row-major matrix order.",
+    "GenSecret SHAKE128 expands k*32*mu bytes. Each coefficient is popcount(mu/2 low bits) minus popcount(the next mu/2 bits), little-endian.",
+    "KeyGen computes A^T*s, adds h1=4, shifts by3, and keeps10 bits. Encaps computes A*sprime with the same rounding.",
+    "Secret key encodes each signed CBD coefficient in its low13 bits, then appends ek, SHA3-256(ek), z.",
+    "Encaps message=SHA3-256(m_raw); prekey||coins=SHA3-512(message||SHA3-256(ek)).",
+    "Saber message subtraction uses512*message_bit. Compression and message recovery use the reference h1/h2 and power-of-two masks.",
+    "Ciphertext is k packed10-bit polynomials followed by one packedet-bit polynomial.",
+    "Shared key=SHA3-256(prekey||SHA3-256(ciphertext)). Decapsulation replaces prekey with z on reencryption mismatch.",
+    "The stored H(ek) is used directly in decapsulation, matching official Saber; no ML-KEM-specific public-key hash check is inserted."
+  ],
+  "arithmetic": {
+    "ring": "Z_m[X]/(X^256+1), m=8192 for matrix products or1024 for ciphertext/public-vector inner products",
+    "centering": "Each left operand is centered modulo the target modulus; each right secret is independently centered modulo8192, never modulo the target1024. Valid generated secrets lie in[-5,5],[-4,4],[-3,3] respectively.",
+    "schoolbook": "Independent shifted ordinary-convolution rows using exact NumPy int64 multiply/add, then subtract degree>=256 terms. No transform, FFT or dense-matrix call.",
+    "matrix_rram": "Only _dot delegates to SaberPolynomialEngine(backend,trace).dot(left,right,modulus,stage). All sampling, packing, rounding, hash and FO code is shared.",
+    "rounding_equivalence": "Canonical reduction modulo8192/1024 before shifts is byte-equivalent to official uint16 arithmetic: discarded multiples become multiples of the final packed field modulus."
+  },
+  "trace": {
+    "callback": "trace(stage,values)",
+    "representation": "bytes remain bytes; arrays may be nested lists or NumPy ndarrays; emitted dictionaries are deep snapshots",
+    "includes": [
+      "raw randomness and processed seeds",
+      "SHAKE/SHA3 inputs and outputs",
+      "matrix coefficients and sampling stream offsets",
+      "CBD bits, positive/negative popcounts, signed and canonical secrets",
+      "polynomial inputs, outputs, backend and phase",
+      "independent schoolbook ordinary convolution, negacyclic folding and accumulated sums",
+      "auxiliary NTT/INTT/binary-bank events provided by the selected engine",
+      "q-to-p rounding, message embedding/subtraction, p-to-t rounding, recovered message bits",
+      "key/ciphertext bytes",
+      "FO reencryption, comparison, selected prekey and KDF"
+    ]
+  },
+  "verification_at_creation": {
+    "passed": true,
+    "official_smoke": "Official KAT count0 for each of LightSaber,Saber,FireSaber: pk,sk,ct,ss,decaps byte-exact on schoolbook backend",
+    "additional_smoke": "One independent seed tuple per family: complete roundtrip, pke recovered message equals H(raw_m), tampered ciphertext gives H(z||H(c)).",
+    "full_suite": "check_golden.py executes all 300 official cases on the rram_binary backend by default, yielding 1500 serialized-output comparisons. Independent arithmetic oracles are checked separately by check_auxiliary.py.",
+    "golden_provenance": "golden_vectors/provenance.json"
+  },
+  "release_preparation": {
+    "scope": "Portable binary-weight reference with documented APIs, deterministic local weight regeneration, official KAT and independent arithmetic validation",
+    "local_changes": "Comments/docstrings, source regeneration, portable optional C audit, binary-only default validation and strict 0/1 artifact checks; fixed official C/KAT files unchanged",
+    "entry_points": [
+      "example.py",
+      "smoke_test.py",
+      "generate_auxiliary_weights.py",
+      "check_binary_weights.py",
+      "check_golden.py",
+      "check_auxiliary.py",
+      "check_rejection.py",
+      "official_reference/validate_reference.py"
+    ],
+    "physical_weights": {
+      "values": [
+        0,
+        1
+      ],
+      "csv_planes": 50,
+      "npz_plane_stacks": 4,
+      "conductance_values_assigned": false,
+      "dense_matrices": "Modular integer coefficients used for weight generation and correctness oracles, not conductances"
+    }
+  }
+}

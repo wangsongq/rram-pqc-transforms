@@ -1,0 +1,26 @@
+{
+  "kind": "closed-form algorithmic matrices; not conductance measurements",
+  "modulus": 3329,
+  "root": 17,
+  "shape": [
+    128,
+    128
+  ],
+  "orientation": "mathematical output rows, input columns",
+  "inverse_scale": 3303,
+  "formula": "W[i,j]=17^((2*BitRev7(i)+1)*j) mod 3329",
+  "inverse_formula": "W_inv[j,i]=128^-1*17^(-(2*BitRev7(i)+1)*j) mod 3329",
+  "checks": {
+    "both_matrix_products_equal_identity_mod_q": true,
+    "pinned_artifact_hash_matches": true
+  },
+  "artifact": {
+    "path": "mlkem_shared_matrices.npz",
+    "sha256": "b96b6c339da9c9599319094c8171603cba2fb6a338a823790be762f40c8de233",
+    "bytes": 36386
+  },
+  "generator": {
+    "path": "generate_matrices.py",
+    "sha256": "669f18dffa7ccf2fdbe92bc69eae2a07add72108e145399ac2126ce3c1f5ebb6"
+  }
+}
