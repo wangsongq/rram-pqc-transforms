@@ -1,7 +1,5 @@
 # Binary NTT/INTT for ML-KEM and Saber
 
-[中文说明](README.zh-CN.md)
-
 Complete Python implementations of ML-KEM and Saber with binary NTT/INTT
 weights, integer reconstruction, inverse-normalization fusion and official
 test-vector validation. Both modules include KeyGen, Encaps and Decaps and
@@ -15,9 +13,7 @@ can be run independently.
 The binary backend explicitly evaluates binary weights and input bits, then
 reconstructs integer sums. All binary weight planes contain only `0` and `1`;
 there are no RRAM conductance values. Mathematical source matrices contain
-modular integer coefficients before bit decomposition. The software models
-exact arithmetic; it does not include board drivers, device measurements,
-ADC simulation, RTL or a hardware timing model.
+modular integer coefficients before bit decomposition.
 
 ## Quick start
 
