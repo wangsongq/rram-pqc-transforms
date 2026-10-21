@@ -66,7 +66,6 @@ Generated outputs are excluded from version control.
 | [`docs/ALGORITHMS.md`](docs/ALGORITHMS.md) | Matrix orientation, normalization, CRT and computation boundaries |
 | [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | Test coverage, fixture provenance and reproducibility instructions |
 | [`docs/VALIDATION.md`](docs/VALIDATION.md) | Results from the local release checks |
-| [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) | Attribution and terms for the bundled upstream material |
 
 ## Which implementation should I use?
 
@@ -133,4 +132,5 @@ This is optional for the Python verification suite.
 
 Original project code and documentation are provided under the [MIT license](LICENSE).
 Bundled official fixtures and reference code retain their upstream notices and
-terms; see [third-party notices](THIRD_PARTY_NOTICES.md).
+terms; see the [NIST ACVP notice](licenses/NIST-ACVP-NOTICE.txt) and
+[official Saber license](saber_full_flow/official_reference/LICENSE).
